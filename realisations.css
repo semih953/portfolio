@@ -1,0 +1,496 @@
+/* Variables pour les couleurs */
+:root {
+  --primary-green: #2e7d32;
+  --light-green: #4CAF50;
+  --hover-green: #388e3c;
+  --text-color: #333;
+  --text-light: #666;
+  --bg-light: #f9f9f9;
+  --bg-dark: #222;
+  --card-bg: #fff;
+  --border-radius: 10px;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Style de la page */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #708090; /* Maintien de la couleur d'arrière-plan globale */
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* En-tête de la page */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: var(--primary-green);
+  color: white;
+  padding: 40px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.page-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 25px;
+  opacity: 0.9;
+}
+
+/* Filtres de projets */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.filter-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid transparent;
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background-color: white;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+/* Conteneur des projets */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+/* Carte de projet */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image du projet */
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Overlay de l'image */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.btn-view-details {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-view-details:hover {
+  background-color: white;
+  color: var(--primary-green);
+}
+
+/* Contenu du projet */
+.project-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: var(--primary-green);
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Description */
+.project-description {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Pied de carte */
+.project-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.btn-toggle-details {
+  background-color: transparent;
+  border: none;
+  color: var(--primary-green);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+.btn-toggle-details:hover {
+  background-color: rgba(46, 125, 50, 0.1);
+}
+
+.hide-text {
+  display: none;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Détails du projet (cachés par défaut) */
+.project-details {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+/* Quand la carte est ouverte */
+.project-card.open .project-details {
+  padding: 0 20px 20px;
+  max-height: 1000px; /* Valeur suffisamment grande */
+}
+
+.project-card.open .show-text {
+  display: none;
+}
+
+.project-card.open .hide-text {
+  display: inline;
+}
+
+.project-card.open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Style des détails */
+.project-details h4 {
+  font-size: 1.1rem;
+  margin: 15px 0 8px;
+  color: var(--text-color);
+}
+
+.project-details p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-details ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.project-details li {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+/* Lien vers le projet complet */
+.project-link-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-project-link {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.btn-project-link:hover {
+  background-color: var(--hover-green);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.btn-load-more {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-load-more:hover {
+  background-color: var(--hover-green);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-load-more::after {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+
+.btn-load-more:hover::after {
+  transform: translateY(3px);
+}
+
+/* Animation de chargement pour le bouton */
+.btn-load-more.loading {
+  pointer-events: none;
+  position: relative;
+  color: transparent;
+}
+
+.btn-load-more.loading::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-info h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #40E0D0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #40E0D0;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .page-header h2 {
+    font-size: 2rem;
+  }
+
+  .project-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .filter-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Animation de transition pour les projets filtrés */
+.project-card {
+  transition: transform 0.5s ease, opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.project-card.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Espacement après le header */
+.page-header {
+  margin-bottom: 40px;
+}

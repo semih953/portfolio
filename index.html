@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - SAHIN Semih</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Conteneur principal -->
+    <div class="container">
+        <div class="header-info">
+            <h1>SAHIN Semih</h1>
+            <p>Développeur Fullstack</p>
+        </div>
+
+        <!-- Barre de navigation -->
+        <nav>
+            <a href="index.html" class="nav-item is-active" data-active-color="orange">Accueil</a>
+            <a href="realisations.html" class="nav-item" data-active-color="green">Réalisations</a>
+            <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+            <a href="veille.html" class="nav-item" data-active-color="red">Veille</a>
+            <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+            <span class="nav-indicator"></span>
+        </nav>
+    </div>
+
+    <!-- Contenu principal -->
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>Bienvenue sur mon portfolio</h2>
+                <p class="subtitle">Transformons vos idées en solutions numériques</p>
+                <div class="hero-buttons">
+                    <a href="realisations.html" class="btn btn-primary">Découvrir mes projets</a>
+                    <a href="#about" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block de présentation avec ancre pour la navigation -->
+        <section id="about" class="presentation-section">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Passionné de développement web et d'innovation technologique, je suis un jeune développeur de 19 ans actuellement en formation BTS Services aux Organisations Informatiques.</p>
+                    <p>Mon parcours a débuté lors d'un stage auprès d'un développeur web pendant ma Première Générale au lycée, une expérience qui a confirmé ma passion pour la programmation.</p>
+                    <p>Je me suis spécialisé dans plusieurs langages de programmation (HTML, CSS, Python, C#) et j'ai acquis des compétences en gestion de bases de données avec My SQL Server Management.</p>
+                    <p>Ma curiosité et mon envie d'apprendre me poussent constamment à explorer de nouveaux environnements de développement pour enrichir mes compétences et offrir des solutions toujours plus adaptées.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-code"></i>
+                        <span>4</span>
+                        <p>Langages maîtrisés</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>3</span>
+                        <p>Projets réalisés</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>BTS</span>
+                        <p>En cours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="section-title">Mes Compétences</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h3>Développement</h3>
+                    <div class="skills-grid">
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>HTML</h4>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>CSS</h4>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fab fa-cuttlefish"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>C#</h4>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>MySQL</h4>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Soft Skills</h3>
+                    <div class="soft-skills">
+                        <span class="soft-skill-tag">Travail d'équipe</span>
+                        <span class="soft-skill-tag">Résolution de problèmes</span>
+                        <span class="soft-skill-tag">Adaptabilité</span>
+                        <span class="soft-skill-tag">Communication</span>
+                        <span class="soft-skill-tag">Autonomie</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Intéressé par mes services?</h2>
+            <p>N'hésitez pas à découvrir mes réalisations ou à me contacter pour discuter de votre projet.</p>
+            <div class="cta-buttons">
+                <a href="realisations.html" class="btn btn-primary">Voir mes projets</a>
+                <a href="mailto:contact@example.com" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Section des logos des partenaires -->
+    <div class="logos-partners">
+        <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+            <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+        </a>
+        <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+            <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+        </a>
+        <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+            <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>SAHIN Semih</h3>
+                <p>Développeur Fullstack</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="veille.html">Veille</a>
+                <a href="bilan.html">Bilan</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>

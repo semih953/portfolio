@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique - SAHIN Semih</title>
+    <link rel="stylesheet" href="index.css"> <!-- Styles globaux -->
+    <link rel="stylesheet" href="veille.css"> <!-- CSS spécifique -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-info">
+            <h1>SAHIN Semih</h1>
+            <p>Développeur Fullstack</p>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item" data-active-color="orange">Accueil</a>
+            <a href="realisations.html" class="nav-item" data-active-color="green">Réalisations</a>
+            <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+            <a href="veille.html" class="nav-item is-active" data-active-color="red">Veille</a>
+            <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+            <span class="nav-indicator"></span>
+        </nav>
+    </div>
+
+    <main>
+        <section class="veille-header">
+            <div class="veille-header-content">
+                <h2>L'Intelligence Artificielle en Radiologie</h2>
+                <p>Ma veille technologique sur les avancées et applications de l'IA dans le domaine de la radiologie médicale</p>
+                <div class="veille-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-newspaper"></i>
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Articles suivis</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span class="stat-number">2023-2025</span>
+                        <span class="stat-label">Période</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-brain"></i>
+                        <span class="stat-number">IA & Radiologie</span>
+                        <span class="stat-label">Domaine</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="veille-intro">
+            <div class="intro-content">
+                <h3>Pourquoi ce sujet?</h3>
+                <p>L'intelligence artificielle révolutionne actuellement le domaine médical, et particulièrement la radiologie. Les algorithmes d'IA permettent désormais de détecter plus rapidement et avec plus de précision certaines pathologies sur les images médicales, d'optimiser les flux de travail des radiologues et d'améliorer la qualité des diagnostics.</p>
+                <p>Cette veille technologique vise à suivre les évolutions, les applications concrètes et les enjeux éthiques de l'IA dans ce domaine médical crucial.</p>
+            </div>
+            <div class="intro-image">
+                <img src="ia-radiologie.jpg" alt="IA et Radiologie">
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <h3>Filtrer les articles</h3>
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label>Trier par :</label>
+                    <select id="sortFilter">
+                        <option value="date-desc">Date (plus récents)</option>
+                        <option value="date-asc">Date (plus anciens)</option>
+                        <option value="note-desc">Note (meilleure)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Source :</label>
+                    <select id="sourceFilter">
+                        <option value="all">Toutes les sources</option>
+                        <option value="LeParisien">Le Parisien</option>
+                        <option value="TechniquesIngenieur">Techniques de l'ingénieur</option>
+                        <option value="SFR">Société française de radiologie</option>
+                        <option value="RSNA">RSNA</option>
+                        <option value="Inserm">Inserm</option>
+                        <option value="ApMedias">AP-HP Médias</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Période :</label>
+                    <select id="yearFilter">
+                        <option value="all">Toutes les années</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+                <button id="resetFilters" class="reset-btn">
+                    <i class="fas fa-undo"></i> Réinitialiser
+                </button>
+            </div>
+        </section>
+
+        <section class="articles-section">
+            <h3>Articles suivis <span id="articleCount"></span></h3>
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Article 1 -->
+                <div class="article-card" data-date="2024-11-24" data-source="LeParisien" data-year="2024" data-note="8">
+                    <div class="article-header">
+                        <span class="article-source">Le Parisien</span>
+                        <span class="article-date">24/11/2024</span>
+                    </div>
+                    <h4>Avec la radiologie « augmentée » par l'IA : « On gagne en précision et en confiance dans le diagnostic »</h4>
+                    <div class="article-content">
+                        <p>L'IA permet aux radiologues de gagner en efficacité et en précision dans leurs diagnostics, notamment pour les pathologies difficiles à détecter à l'œil nu.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">8/10</span>
+                        </div>
+                        <a href="https://www.leparisien.fr/societe/sante/avec-la-radiologie-augmentee-par-lia-on-gagne-en-precision-et-en-confiance-dans-le-diagnostic-24-11-2024-3LNSCGXJJZGZFKYPXYVLPCQ5PE.php" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="article-card" data-date="2025-02-15" data-source="RSNA" data-year="2025" data-note="9">
+                    <div class="article-header">
+                        <span class="article-source">RSNA</span>
+                        <span class="article-date">15/02/2025</span>
+                    </div>
+                    <h4>L'IA propose des avancées majeures dans la détection précoce des cancers du poumon</h4>
+                    <div class="article-content">
+                        <p>Une étude présentée au RSNA 2025 montre que les algorithmes d'IA peuvent désormais détecter les nodules pulmonaires cancéreux avec une précision de 94%, surpassant les radiologues dans certains cas.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-text">9/10</span>
+                        </div>
+                        <a href="#" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="article-card" data-date="2023-10-27" data-source="TechniquesIngenieur" data-year="2023" data-note="9">
+                    <div class="article-header">
+                        <span class="article-source">Techniques de l'ingénieur</span>
+                        <span class="article-date">27/10/2023</span>
+                    </div>
+                    <h4>Raidium ou comment utiliser l'IA pour soutenir les radiologues</h4>
+                    <div class="article-content">
+                        <p>Présentation de Raidium, une solution d'IA développée pour assister les radiologues dans leur pratique quotidienne en facilitant la détection et la caractérisation des anomalies.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-text">9/10</span>
+                        </div>
+                        <a href="https://www.techniques-ingenieur.fr/actualite/articles/raidium-ou-comment-utiliser-lia-pour-soutenir-les-radiologues-128144/" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="article-card" data-date="2023-04-20" data-source="SFR" data-year="2023" data-note="7">
+                    <div class="article-header">
+                        <span class="article-source">Société française de radiologie</span>
+                        <span class="article-date">20/04/2023</span>
+                    </div>
+                    <h4>Intelligence artificielle et garantie humaine IA un outil à utiliser avec raison</h4>
+                    <div class="article-content">
+                        <p>La SFR rappelle l'importance de la "garantie humaine" dans l'utilisation de l'IA en radiologie, soulignant que ces outils doivent rester des assistants au service du radiologue.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">7/10</span>
+                        </div>
+                        <a href="https://www.radiologie.fr/sites/www.radiologie.fr/files/medias/documents/CP%20IA%20SFR.pdf" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="article-card" data-date="2025-01-10" data-source="ApMedias" data-year="2025" data-note="8">
+                    <div class="article-header">
+                        <span class="article-source">AP-HP Médias</span>
+                        <span class="article-date">10/01/2025</span>
+                    </div>
+                    <h4>L'AP-HP déploie massivement l'IA en radiologie dans ses 39 hôpitaux</h4>
+                    <div class="article-content">
+                        <p>L'Assistance Publique - Hôpitaux de Paris annonce le déploiement à grande échelle de solutions d'intelligence artificielle pour l'analyse d'images médicales dans l'ensemble de ses services de radiologie.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">8/10</span>
+                        </div>
+                        <a href="#" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="article-card" data-date="2024-06-18" data-source="Inserm" data-year="2024" data-note="9">
+                    <div class="article-header">
+                        <span class="article-source">Inserm</span>
+                        <span class="article-date">18/06/2024</span>
+                    </div>
+                    <h4>Intelligence artificielle en radiologie : l'Inserm publie une étude sur son impact sur le diagnostic précoce</h4>
+                    <div class="article-content">
+                        <p>L'Institut national de la santé et de la recherche médicale présente les résultats d'une vaste étude menée sur l'utilisation de l'IA pour améliorer le diagnostic précoce de certaines pathologies.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-text">9/10</span>
+                        </div>
+                        <a href="#" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 7 -->
+                <div class="article-card" data-date="2024-09-05" data-source="RSNA" data-year="2024" data-note="8">
+                    <div class="article-header">
+                        <span class="article-source">RSNA</span>
+                        <span class="article-date">05/09/2024</span>
+                    </div>
+                    <h4>L'IA réduit le temps d'analyse des IRM cérébrales de 40%</h4>
+                    <div class="article-content">
+                        <p>Une nouvelle génération d'algorithmes d'IA permet d'accélérer considérablement l'analyse des IRM cérébrales tout en améliorant la détection de lésions subtiles.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">8/10</span>
+                        </div>
+                        <a href="#" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 8 -->
+                <div class="article-card" data-date="2024-03-12" data-source="TechniquesIngenieur" data-year="2024" data-note="7">
+                    <div class="article-header">
+                        <span class="article-source">Techniques de l'ingénieur</span>
+                        <span class="article-date">12/03/2024</span>
+                    </div>
+                    <h4>Les défis techniques de l'IA appliquée aux images médicales à haute résolution</h4>
+                    <div class="article-content">
+                        <p>Analyse des défis techniques liés au traitement par IA des images médicales à haute résolution et des solutions innovantes développées pour les surmonter.</p>
+                    </div>
+                    <div class="article-footer">
+                        <div class="article-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">7/10</span>
+                        </div>
+                        <a href="#" class="article-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Lire l'article
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="conclusion-section">
+            <h3>Analyse et Perspectives</h3>
+            <div class="conclusion-content">
+                <p>Ma veille technologique sur l'IA en radiologie révèle plusieurs tendances importantes :</p>
+                <ul>
+                    <li><strong>Intégration croissante</strong> de l'IA dans la pratique radiologique quotidienne</li>
+                    <li><strong>Amélioration de la précision</strong> des diagnostics, particulièrement pour les pathologies difficiles à détecter</li>
+                    <li><strong>Gain de temps significatif</strong> permettant aux radiologues de se concentrer sur les cas complexes</li>
+                    <li><strong>Questions éthiques</strong> concernant la "garantie humaine" et la responsabilité médicale</li>
+                    <li><strong>Déploiement progressif</strong> dans les grands centres hospitaliers, avec une généralisation attendue dans les prochaines années</li>
+                </ul>
+                <p>L'IA en radiologie n'est plus une simple promesse technologique mais une réalité qui transforme progressivement la pratique médicale. Les développements futurs devraient renforcer cette tendance, avec un accent particulier sur l'explicabilité des algorithmes et l'intégration harmonieuse dans le flux de travail des radiologues.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Section des logos des partenaires -->
+    <div class="logos-partners">
+        <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+            <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+        </a>
+        <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+            <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+        </a>
+        <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+            <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>SAHIN Semih</h3>
+                <p>Développeur Fullstack</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="veille.html">Veille</a>
+                <a href="bilan.html">Bilan</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- Scripts globaux -->
+    <script src="veille.js"></script> <!-- Script spécifique pour la page veille -->
+</body>
+</html>

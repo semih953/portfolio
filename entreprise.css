@@ -1,0 +1,471 @@
+/* Variables pour les couleurs */
+:root {
+  --primary-blue: #0073e6;
+  --dark-blue: #0055a5;
+  --light-blue: #e6f2ff;
+  --accent-blue: #1182f3;
+  --text-color: #333;
+  --text-light: #555;
+  --card-bg: white;
+  --section-bg: #f8f9fa;
+  --border-radius: 12px;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Bannière de l'entreprise */
+.company-banner {
+  background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+  color: white;
+  padding: 60px 30px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.company-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('pizza-pattern.svg');
+  background-size: 300px;
+  opacity: 0.1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Profil de l'entreprise */
+.company-profile {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: var(--box-shadow);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: span 2;
+}
+
+.company-logo {
+  width: 200px;
+  height: auto;
+  border: 5px solid var(--primary-blue);
+  border-radius: 50%;
+  padding: 10px;
+  background-color: white;
+  transition: var(--transition);
+}
+
+.company-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.company-info {
+  margin-bottom: 20px;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.info-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 15px;
+  color: var(--primary-blue);
+}
+
+.company-type {
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.info-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-item i {
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+}
+
+.company-description {
+  grid-column: 1 / -1;
+}
+
+.company-description h3 {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.company-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* Section du poste */
+.job-section {
+  margin-bottom: 40px;
+}
+
+.job-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  border-left: 5px solid var(--primary-blue);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.job-title h3 {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 5px;
+}
+
+.job-period {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.job-icon {
+  background-color: var(--primary-blue);
+  color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.job-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* Section des missions */
+.missions-section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.missions-section h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.missions-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: var(--primary-blue);
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.mission-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 115, 230, 0.15);
+}
+
+.mission-icon {
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+  color: white;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 115, 230, 0.3);
+}
+
+.mission-content h3 {
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.mission-content p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* Section des technologies */
+.tech-stack {
+  background-color: var(--section-bg);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.tech-stack h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.tech-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-icon i {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  transition: var(--transition);
+}
+
+.tech-icon:hover i {
+  transform: scale(1.2);
+}
+
+.tech-icon span {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Section témoignage */
+.testimonial-section {
+  margin-bottom: 40px;
+}
+
+.testimonial-card {
+  background: linear-gradient(135deg, var(--light-blue), #f0f8ff);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.testimonial-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-content i {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  opacity: 0.2;
+  position: absolute;
+  top: -20px;
+  left: 0;
+}
+
+.testimonial-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.testimonial-author {
+  margin-top: 20px;
+}
+
+.author-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 5px;
+}
+
+.author-title {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-info h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--primary-blue);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-blue);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .company-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-container {
+    grid-row: 1;
+    margin-bottom: 20px;
+  }
+
+  .missions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .job-icon {
+    margin-bottom: 15px;
+  }
+
+  .banner-content h2 {
+    font-size: 2rem;
+  }
+}
