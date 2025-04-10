@@ -1,0 +1,555 @@
+/* Variables pour les couleurs */
+:root {
+    --primary-purple: #673ab7;
+    --dark-purple: #4a148c;
+    --light-purple: #f3e5f5;
+    --accent-purple: #9c27b0;
+    --text-color: #333;
+    --text-light: #666;
+    --card-bg: white;
+    --section-bg: #f9f9f9;
+    --border-radius: 12px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #708090;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* Header de la page bilan */
+  .bilan-header {
+    background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+    color: white;
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+  }
+  
+  .bilan-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .bilan-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  /* Titres de section */
+  section h3 {
+    font-size: 1.8rem;
+    color: var(--primary-purple);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-purple);
+    display: flex;
+    align-items: center;
+  }
+  
+  section h3 i {
+    margin-right: 12px;
+    color: var(--accent-purple);
+  }
+  
+  /* Timeline section */
+  .timeline {
+    position: relative;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: var(--primary-purple);
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-purple);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  .timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    background: var(--light-purple);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  .timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: var(--light-purple);
+    transform: rotate(45deg);
+  }
+  
+  .timeline-content.right {
+    margin-left: auto;
+  }
+  
+  .timeline-content:not(.right)::after {
+    right: -10px;
+  }
+  
+  .timeline-content.right::after {
+    left: -10px;
+  }
+  
+  .timeline-date {
+    display: inline-block;
+    background: var(--primary-purple);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-content h4 {
+    color: var(--dark-purple);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .timeline-content p {
+    color: var(--text-light);
+  }
+  
+  /* Compétences section */
+  .competences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .competence-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid var(--primary-purple);
+  }
+  
+  .competence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(103, 58, 183, 0.15);
+  }
+  
+  .competence-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(103, 58, 183, 0.3);
+  }
+  
+  .competence-content h4 {
+    font-size: 1.3rem;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+  }
+  
+  .competence-content p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+  
+  .progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .progress-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-purple), var(--accent-purple));
+    border-radius: 5px;
+  }
+  
+  .progress-text {
+    font-weight: 600;
+    color: var(--primary-purple);
+  }
+  
+  /* Certifications section */
+  .certifications-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .certification-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(103, 58, 183, 0.15);
+  }
+  
+  .certification-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(103, 58, 183, 0.3);
+  }
+  
+  .certification-content h4 {
+    font-size: 1.2rem;
+    color: var(--primary-purple);
+    margin-bottom: 10px;
+  }
+  
+  .certification-content p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+  
+  .certification-date {
+    background-color: var(--light-purple);
+    color: var(--primary-purple);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  /* Évaluation section */
+  .evaluation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .evaluation-card {
+    background-color: var(--section-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .evaluation-card h4 {
+    font-size: 1.3rem;
+    color: var(--primary-purple);
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-purple);
+  }
+  
+  .evaluation-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .evaluation-list li {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+  }
+  
+  .evaluation-list li i {
+    color: var(--primary-purple);
+    margin-right: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .radar-chart-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+  }
+  
+  /* Objectifs section */
+  .objectifs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .objectif-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid var(--primary-purple);
+  }
+  
+  .objectif-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(103, 58, 183, 0.15);
+  }
+  
+  .objectif-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(103, 58, 183, 0.3);
+  }
+  
+  .objectif-content h4 {
+    font-size: 1.3rem;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+  }
+  
+  .objectif-content ul {
+    padding-left: 20px;
+  }
+  
+  .objectif-content ul li {
+    margin-bottom: 10px;
+    color: var(--text-light);
+  }
+  
+  /* Conclusion section */
+  .conclusion-content {
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+  
+  .conclusion-content p {
+    margin-bottom: 20px;
+  }
+  
+  .signature {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .signature-img {
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  
+  .signature p {
+    margin: 5px 0;
+    font-weight: 600;
+    color: var(--primary-purple);
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 40px;
+    }
+  
+    .timeline-dot {
+      left: 40px;
+    }
+  
+    .timeline-content {
+      width: 80%;
+      margin-left: 80px;
+    }
+  
+    .timeline-content.right {
+      margin-left: 80px;
+    }
+  
+    .timeline-content::after {
+      display: none;
+    }
+  
+    .competences-grid,
+    .certifications-container,
+    .evaluation-grid,
+    .objectifs-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .bilan-header h2 {
+      font-size: 2rem;
+    }
+  
+    .bilan-header p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s forwards;
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 1s forwards;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 1s forwards;
+  }
+  
+  /* Animation des cartes au défilement */
+  .competence-card,
+  .certification-card,
+  .objectif-card,
+  .evaluation-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .competence-card.visible,
+  .certification-card.visible,
+  .objectif-card.visible,
+  .evaluation-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Animation de la timeline */
+  .timeline-item {
+    opacity: 0;
+  }
+  
+  .timeline-item:nth-child(odd) {
+    transform: translateX(-50px);
+  }
+  
+  .timeline-item:nth-child(even) {
+    transform: translateX(50px);
+  }
+  
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  /* Effect d'hover spécial pour les icônes */
+  .competence-icon i,
+  .certification-icon i,
+  .objectif-icon i {
+    transition: transform 0.3s ease;
+  }
+  
+  .competence-card:hover .competence-icon i,
+  .certification-card:hover .certification-icon i,
+  .objectif-card:hover .objectif-icon i {
+    transform: scale(1.2);
+  }
