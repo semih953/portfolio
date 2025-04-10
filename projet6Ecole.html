@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestEPI - Présentation du Projet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #1976d2;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        h1 {
+            margin: 0;
+        }
+        
+        h2 {
+            color: #1976d2;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .data-model-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .data-model-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .image-caption {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GestEPI</h1>
+        <p>Gestion des Équipements de Protection Individuelle</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Présentation du projet</h2>
+            <p>
+                GestEPI est une application développée pour les sociétés de travaux en hauteur qui emploient des cordistes. 
+                L'application permet de gérer et suivre les Équipements de Protection Individuelle (EPI) utilisés par ces professionnels.
+                Le suivi rigoureux des EPI est essentiel pour garantir la sécurité des travailleurs en hauteur.
+            </p>
+        </section>
+        
+        <section>
+            <h2>Problématique</h2>
+            <p>
+                Les équipements de protection individuelle doivent être suivis et contrôlés de manière fréquente pour garantir la sécurité des cordistes.
+                Actuellement, ce suivi est souvent réalisé sur papier ou dans des fichiers tableurs, ce qui peut entraîner des erreurs, des oublis, ou 
+                des difficultés dans la gestion des contrôles périodiques.
+            </p>
+        </section>
+        
+        <section>
+            <h2>Fonctionnalités principales</h2>
+            <ul>
+                <li><strong>Saisie d'EPI</strong> - Enregistrement des différents types d'EPI (cordes, sangles, baudriers, casques, etc.) avec leurs caractéristiques.</li>
+                <li><strong>Saisie des contrôles</strong> - Documentation des contrôles effectués avec date, statut et remarques.</li>
+                <li><strong>Consultation des EPI</strong> - Visualisation des EPI et de leur historique de contrôle.</li>
+                <li><strong>Détail des contrôles</strong> - Accès aux informations détaillées sur chaque contrôle effectué.</li>
+                <li><strong>Alertes</strong> - Système d'alerte pour les contrôles à venir.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Architecture technique</h2>
+            <p>
+                L'application est construite avec une architecture moderne en trois parties:
+            </p>
+            <ul>
+                <li><strong>Frontend</strong> - Interface utilisateur développée avec React et Material UI</li>
+                <li><strong>Backend</strong> - API REST développée avec Express.js et TypeScript</li>
+                <li><strong>Modèle de données</strong> - Types partagés entre le frontend et le backend via un package npm</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Données gérées</h2>
+            <ul>
+                <li><strong>EPI</strong> - Identifiant, marque, modèle, numéro de série, dates d'achat, de fabrication et de mise en service, etc.</li>
+                <li><strong>Contrôles</strong> - Date, opérateur, EPI concerné, statut (opérationnel, à réparer, mis au rebut), remarques</li>
+                <li><strong>Types d'EPI</strong> - Casques, baudriers, cordes, mousquetons, systèmes d'assurage, etc.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Modèle de données</h2>
+            <div class="data-model-container">
+                <img src="/api/placeholder/600/400" alt="Modèle de données GestEPI">
+                <p class="image-caption">Diagramme du modèle de données de l'application GestEPI</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+            <p><a href="https://github.com/semih953/GestEPI.git" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+        </div>
+    </footer>
+</body>
+</html>

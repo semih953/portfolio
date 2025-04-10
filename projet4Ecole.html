@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Courses - Projet Python</title>
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary-color: #4a8fe7;
+            --secondary-color: #f5f5f5;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styles généraux */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Fonctionnalités */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* Code */
+        .code-section {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.5;
+        }
+
+        .code-section code {
+            display: block;
+            white-space: pre;
+        }
+
+        /* Pour les smartphones */
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Bouton démo */
+        .demo-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            background-color: #ff5252;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Liste de Courses</h1>
+            <p>Un gestionnaire de liste de courses simple en Python</p>
+        </header>
+
+        <div class="section">
+            <h2>À propos du projet</h2>
+            <p>
+                Ce projet est une application console Python permettant de gérer une liste de courses.
+                Vous pouvez facilement ajouter, supprimer ou modifier des articles et leurs quantités.
+                Une solution idéale pour organiser vos achats quotidiens !
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Fonctionnalités</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Ajouter</h3>
+                    <p>Ajoutez de nouveaux articles à votre liste avec leur quantité.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Supprimer</h3>
+                    <p>Supprimez facilement des articles de votre liste de courses.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Modifier</h3>
+                    <p>Modifiez les articles et les quantités déjà présents dans la liste.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Aperçu du code</h2>
+            <div class="code-section">
+                <code>
+# Variables
+liste_course = {
+    "pates": 2,
+    "sauce tomate": 1,
+    "parmesan": 1
+}
+
+# Fonctions
+def Ajouter():
+    article = input('Quel article voulez vous ajouter?')
+    quantite = int(input('Quelle quantite voulez vous en ajouter?'))
+    liste_course[article] = quantite
+
+def Supprimer():
+    afficher_liste_numerotee(liste_course)
+    numero_supprimer = int(input('Entrez le numéro de l\'article à supprimer: '))
+
+def afficher_liste_numerotee(liste):
+    for i, (article, quantite) in enumerate(liste.items(), start=1):
+        print(f"{i} - {article}: {quantite}")
+
+# [...] Plus de code disponible dans le fichier source
+                </code>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Comment utiliser</h2>
+            <ol>
+                <li>Clonez le dépôt ou téléchargez le fichier <code>liste_courses.py</code></li>
+                <li>Exécutez-le dans un terminal avec la commande <code>py liste_courses.py</code></li>
+                <li>Suivez les instructions dans la console pour gérer votre liste de courses</li>
+            </ol>
+            <p>
+                Le programme offre une interface simple à utiliser avec des options numérotées.
+                Sélectionnez l'action que vous souhaitez effectuer et suivez les instructions !
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Améliorations possibles</h2>
+            <ul>
+                <li>Persistance des données (sauvegarde dans un fichier)</li>
+                <li>Interface utilisateur graphique</li>
+                <li>Catégorisation des articles</li>
+                <li>Calcul du prix total estimé</li>
+            </ul>
+        </div>
+
+        <footer>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+                <p><a href="https://github.com/semih953/sahin_semih_python.git" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

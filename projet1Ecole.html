@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP_COMPAGNIE - Projet SQL | Mon Portfolio</title>
+    <style>
+        /* Variables */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 5px;
+        }
+
+        /* Reset & Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #2c3e50; /* Fond sombre comme dans votre capture */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Structure principale */
+        .page-content {
+            display: flex;
+            flex-direction: column;
+            background-color: #2c3e50;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Carte principale */
+        .main-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Colonnes */
+        .left-column, .right-column {
+            padding: 40px;
+            flex-basis: 50%;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .left-column {
+            min-width: 300px;
+            border-right: 1px solid #eee;
+        }
+
+        .right-column {
+            min-width: 350px;
+        }
+
+        /* Titre de section */
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        /* Texte du projet */
+        .project-text {
+            margin-bottom: 30px;
+        }
+
+        /* Structure BDD */
+        .db-schema {
+            width: 100%;
+        }
+
+        .table-container {
+            margin-bottom: 20px;
+            border: 1px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .table-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .table-content {
+            padding: 15px;
+        }
+
+        .column {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .key-column::before {
+            content: "🔑 ";
+            margin-right: 5px;
+        }
+
+        .foreign-key::before {
+            content: "🔗 ";
+            margin-right: 5px;
+        }
+
+        /* Code SQL */
+        .sql-showcase {
+            width: 100%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .sql-title {
+            color: var(--primary-color);
+            padding: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .code-container {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            line-height: 1.5;
+        }
+
+        .code-container pre {
+            margin: 0;
+        }
+
+        /* Styles pour la coloration syntaxique */
+        .comment { color: #7d8799; }
+        .keyword { color: #c678dd; }
+        .table { color: #e06c75; }
+        .field { color: #98c379; }
+        .operator { color: #56b6c2; }
+        .string { color: #e5c07b; }
+
+        /* Media queries pour la responsivité */
+        @media (max-width: 768px) {
+            .main-card {
+                flex-direction: column;
+            }
+            
+            .left-column, .right-column {
+                flex-basis: 100%;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-content">
+        <div class="main-card">
+            <div class="left-column">
+                <h2 class="section-title">Aperçu du projet</h2>
+                <div class="project-text">
+                    <p>Ce projet consiste en la création et l'interrogation d'une base de données pour une compagnie aérienne. J'ai développé une série de requêtes SQL permettant d'extraire et de manipuler efficacement les données.</p>
+                    <br>
+                    <p>La base de données contient des informations sur les pilotes, les avions, les vols, et les relations entre ces entités.</p>
+                </div>
+                
+                <h3 class="section-title">Compétences mises en œuvre</h3>
+                <ul style="list-style-type: none; margin-left: 10px;">
+                    <li>• SQL</li>
+                    <li>• Base de données</li>
+                    <li>• Requêtes complexes</li>
+                    <li>• Sous-requêtes</li>
+                    <li>• Jointures</li>
+                    <li>• Filtrage de données</li>
+                </ul>
+            </div>
+            
+            <div class="right-column">
+                <h2 class="section-title">Schéma de la base de données</h2>
+                <div class="db-schema">
+                    <div class="table-container">
+                        <div class="table-header">PILOTE</div>
+                        <div class="table-content">
+                            <div class="column key-column">NUMPILOTE</div>
+                            <div class="column">NOMPILOTE</div>
+                            <div class="column">ADRESSE</div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <div class="table-header">AVION</div>
+                        <div class="table-content">
+                            <div class="column key-column">NUMAVION</div>
+                            <div class="column">NOMAVION</div>
+                            <div class="column">CAPACITE</div>
+                            <div class="column">LOCALISATION</div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-container">
+                        <div class="table-header">VOL</div>
+                        <div class="table-content">
+                            <div class="column key-column">NUMVOL</div>
+                            <div class="column foreign-key">NUMPILOTE</div>
+                            <div class="column foreign-key">NUMAVION</div>
+                            <div class="column">VILLEDEP</div>
+                            <div class="column">VILLEARR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sql-showcase">
+            <h2 class="sql-title">Exemples de requêtes SQL</h2>
+            <div class="code-container">
+                <pre><code><span class="comment">-- Sélection des pilotes qui volent sur des Airbus et qui ont effectué un vol</span>
+<span class="comment">-- vers une destination où est déjà allé le pilote ADER</span>
+<span class="keyword">SELECT</span> *
+<span class="keyword">FROM</span> <span class="table">PILOTE</span>
+<span class="keyword">WHERE</span> <span class="field">ADRESSE</span> <span class="keyword">IN</span> (
+    <span class="keyword">SELECT</span> <span class="field">LOCALISATION</span>
+    <span class="keyword">FROM</span> <span class="table">AVION</span>
+    <span class="keyword">WHERE</span> <span class="field">NOMAVION</span> <span class="keyword">LIKE</span> <span class="string">'AIRBUS%'</span>)
+<span class="keyword">AND</span> <span class="field">NUMPILOTE</span> <span class="keyword">IN</span> (
+    <span class="keyword">SELECT</span> <span class="field">NUMPILOTE</span>
+    <span class="keyword">FROM</span> <span class="table">VOL</span>
+    <span class="keyword">WHERE</span> <span class="field">VILLEDEP</span> <span class="keyword">IN</span> (
+        <span class="keyword">SELECT</span> <span class="field">VILLEARR</span>
+        <span class="keyword">FROM</span> <span class="table">VOL</span>
+        <span class="keyword">WHERE</span> <span class="field">NUMPILOTE</span> <span class="keyword">IN</span> (
+            <span class="keyword">SELECT</span> <span class="field">NUMPILOTE</span> 
+            <span class="keyword">FROM</span> <span class="table">PILOTE</span>
+            <span class="keyword">WHERE</span> <span class="field">NOMPILOTE</span> <span class="keyword">LIKE</span> <span class="string">"ADER %"</span>)))</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+            <p><a href="https://github.com/semih953/TP_COMPAGNIE.git" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

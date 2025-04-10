@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les4Fantastiques - Univers Marvel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #03507E;
+            --secondary-color: #FF416C;
+            --accent-color: #ff4b2b;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--primary-color) 30%, var(--secondary-color) 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .intro {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-card {
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .installation {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            margin-top: 1rem;
+        }
+        
+        .code {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: white;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Les4Fantastiques</h1>
+            <p class="intro">Explorez l'univers Marvel comme jamais auparavant</p>
+        </header>
+        
+        <section class="section">
+            <h2 style="color: var(--primary-color);">À propos du projet</h2>
+            <p>Les4Fantastiques est une application web qui permet aux fans de Marvel de découvrir l'univers riche des super-héros, des méchants et des séries. Notre plateforme offre une expérience immersive pour tous les passionnés de l'univers Marvel.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-mask"></i>
+                    <h3>Personnages</h3>
+                    <p>Explorez les profils détaillés des héros et vilains Marvel, avec leurs histoires et leurs pouvoirs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-film"></i>
+                    <h3>Séries</h3>
+                    <p>Découvrez les séries emblématiques de l'univers Marvel et leur chronologie.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Mini-jeu</h3>
+                    <p>Testez vos réflexes avec notre mini-jeu inspiré de l'univers Spider-Man.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 style="color: var(--primary-color);">Technologies utilisées</h2>
+            <p>Notre projet est construit avec des technologies modernes pour offrir une expérience utilisateur fluide et réactive :</p>
+            
+            <div class="tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Django</span>
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Bootstrap</span>
+                <span class="tech-badge">API Marvel</span>
+                <span class="tech-badge">MySQL</span>
+            </div>
+            
+            <div class="installation">
+                <h3>Installation</h3>
+                <p>Pour installer et exécuter le projet localement :</p>
+                
+                <div class="code">
+                    # Cloner le dépôt<br>
+                    git clone https://github.com/Semiiih/Les4Fantastiques.git<br>
+                    cd Les4Fantastiques<br><br>
+                    
+                    # Configurer la base de données<br>
+                    # Importer le fichier les4fantastiques.sql<br><br>
+                    
+                    # Lancer le serveur<br>
+                    python3 manage.py runserver
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 style="color: var(--primary-color);">Fonctionnalités principales</h2>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-user-circle"></i> Gestion des comptes</h3>
+                <p>Créez votre compte pour sauvegarder vos personnages et séries préférés.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-star"></i> Liste de favoris</h3>
+                <p>Ajoutez vos personnages et séries préférés à votre liste personnelle de favoris.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-gamepad"></i> Mini-jeu interactif</h3>
+                <p>Un jeu amusant où vous contrôlez Spider-Man sautant au-dessus des obstacles.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3><i class="fas fa-question-circle"></i> Quiz Marvel</h3>
+                <p>Testez vos connaissances sur l'univers Marvel avec notre quiz interactif.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+            <p><a href="https://github.com/Semiiih/Les4Fantastiques" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+        </div>
+    </footer>
+        <p><a href="https://github.com/Semiiih/Les4Fantastiques" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+   
+</body>
+</html>
