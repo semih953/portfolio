@@ -1,15 +1,15 @@
 /* Variables pour les couleurs */
 :root {
-  --primary-blue: #0073e6;
-  --dark-blue: #0055a5;
-  --light-blue: #e6f2ff;
-  --accent-blue: #1182f3;
+  --primary-blue: #673ab7;
+  --dark-blue: #4a148c;
+  --light-blue: #9c27b0;
+  --accent-blue: #673ab7;
   --text-color: #333;
-  --text-light: #555;
+  --text-light: #333;
   --card-bg: white;
   --section-bg: #f8f9fa;
   --border-radius: 12px;
-  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 5px 15px rgba(95, 49, 49, 0.1);
   --transition: all 0.3s ease;
 }
 

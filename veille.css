@@ -1,11 +1,11 @@
 /* Variables pour les couleurs */
 :root {
-    --primary-red: #e53935;
-    --dark-red: #c62828;
+    --primary-red: #673ab7;
+    --dark-red: #4a148c;
     --light-red: #ffebee;
-    --accent-red: #ff5252;
+    --accent-red: #673ab7;
     --text-color: #333;
-    --text-light: #555;
+    --text-light: #333;
     --card-bg: white;
     --section-bg: #f8f9fa;
     --border-radius: 10px;
@@ -260,4 +260,12 @@
   .article-card h4 {
     padding: 15px;
     font-size: 1.1rem;
-    line- }
+    line- black ; }
+
+    /* Footer styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}

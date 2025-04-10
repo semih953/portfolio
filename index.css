@@ -10,17 +10,17 @@
 
 /* Variables pour les couleurs */
 :root {
-  --primary-color: #40E0D0;
-  --secondary-color: #708090;
-  --accent-color-orange: #FF8C00;
-  --accent-color-green: #4CAF50;
-  --accent-color-blue: #0073e6;
-  --accent-color-red: #e53935;
-  --accent-color-purple: #673ab7;
-  --dark-color: #333;
-  --light-color: #f4f4f9;
+  --primary-color: #673ab7; /* Changé en violet */
+  --secondary-color: #4a148c; /* Violet foncé */
+  --accent-color-orange: #9c27b0; /* Changé en accent violet */
+  --accent-color-green: #673ab7; /* Uniformisation avec le violet */
+  --accent-color-blue: #673ab7; /* Uniformisation avec le violet */
+  --accent-color-red: #673ab7; /* Uniformisation avec le violet */
+  --accent-color-purple: #673ab7; /* Déjà violet */
+  --dark-color: #311b92; /* Violet très foncé */
+  --light-color: #f3e5f5; /* Violet très clair */
   --text-color: #333;
-  --text-light: #666;
+  --text-light: #333;
   --border-radius: 10px;
   --transition-speed: 0.3s;
 }
@@ -91,7 +91,7 @@ body {
 
 /* Style général de la barre de navigation */
 nav {
-  background-color: #00FFFF;
+  background-color: black;
   padding: 0 20px;
   border-radius: 40px;
   box-shadow: 0 10px 40px rgba(159, 162, 177, .8);
@@ -102,7 +102,7 @@ nav {
 
 /* Style des éléments de navigation */
 .nav-item {
-  color: #83818c;
+  color: white;
   font-family: Arial, sans-serif;
   padding: 20px;
   margin: 0 6px;
@@ -477,7 +477,7 @@ section {
 
 /* Footer styles */
 footer {
-  background-color: var(--dark-color);
+  background-color: #333;
   color: white;
   padding: 40px 20px 20px;
   margin-top: 50px;

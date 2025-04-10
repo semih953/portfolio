@@ -1,10 +1,10 @@
 /* Variables pour les couleurs */
 :root {
-  --primary-green: #2e7d32;
-  --light-green: #4CAF50;
-  --hover-green: #388e3c;
+  --primary-green: #673ab7;
+  --light-green: #4a148c;
+  --hover-green: #9c27b0;
   --text-color: #333;
-  --text-light: #666;
+  --text-light: #333;
   --bg-light: #f9f9f9;
   --bg-dark: #222;
   --card-bg: #fff;
@@ -16,7 +16,7 @@
 /* Style de la page */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #708090; /* Maintien de la couleur d'arrière-plan globale */
+  background-color: #4a148c; /* Maintien de la couleur d'arrière-plan globale */
 }
 
 main {
@@ -47,6 +47,31 @@ main {
   max-width: 800px;
   margin: 0 auto 25px;
   opacity: 0.9;
+}
+
+/* Sections de réalisations */
+.section-title {
+  font-size: 2.2rem;
+  color: var(--primary-green);
+  text-align: center;
+  margin: 40px 0 30px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: var(--primary-green);
+}
+
+.realisations-section {
+  margin-bottom: 60px;
 }
 
 /* Filtres de projets */

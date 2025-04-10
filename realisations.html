@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="index.css"> <!-- Styles globaux -->
     <link rel="stylesheet" href="realisations.css"> <!-- CSS spécifique -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Styles spécifiques pour les sections de réalisations */
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            text-align: center;
+            margin: 40px 0 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-green);
+        }
+        
+        .realisations-section {
+            margin-bottom: 60px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -30,459 +57,570 @@
             <p>Découvrez les projets que j'ai développés au cours de ma formation et de mes expériences professionnelles.</p>
         </div>
 
-        <div class="projects-container">
-            <!-- Projet 1 -->
-            <div class="project-card" data-category="data app">
-                <div class="project-image">
-                    <img src="pointage.jpg" alt="Application de pointage">
-                    <div class="project-overlay">
-                        <a href="projet1.html" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
+        <!-- Section des réalisations en entreprise -->
+        <section class="realisations-section">
+            <h2 class="section-title">Réalisations en Entreprise</h2>
+            <div class="projects-container">
+                <!-- Projet Entreprise 1 - Optimisation des exports -->
+                <div class="project-card" data-category="data app">
+                    <div class="project-image">
+                        <img src="pointage.jpg" alt="Application de pointage">
+                        <div class="project-overlay">
+                            <a href="projet1.html" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Optimisation des exports pour une application de pointage</h3>
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <p class="project-description">
+                            Développement d'un système de filtres dynamiques pour faciliter l'analyse des absences 
+                            et améliorer l'efficacité du service des ressources humaines.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Améliorer la lisibilité et l'exploitation des données d'absences exportées depuis l'application 
+                            de pointage pour faciliter le travail d'analyse des ressources humaines.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai développé un filtre dynamique permettant de trier les absences par catégorie 
+                            (maladie, congés, heures supplémentaires, etc.). Cela a permis de rendre les données 
+                            exportées beaucoup plus structurées et faciles à exploiter.
+                        </p>
+                        
+                        <h4>Résultats</h4>
+                        <p>
+                            La fonctionnalité de filtrage a permis d'améliorer considérablement l'efficacité des 
+                            utilisateurs qui exploitent ces données. Les ressources humaines peuvent désormais 
+                            traiter et analyser les absences de manière beaucoup plus rapide et précise.
+                        </p>
+                        
+                        <div class="project-link-container">
+                            <a href="projet1.html" class="btn-project-link">Voir le projet complet</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-content">
-                    <h3>Optimisation des exports pour une application de pointage</h3>
-                    <div class="project-tags">
-                        <span class="tag">C#</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">SQL</span>
-                    </div>
-                    <p class="project-description">
-                        Développement d'un système de filtres dynamiques pour faciliter l'analyse des absences 
-                        et améliorer l'efficacité du service des ressources humaines.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Améliorer la lisibilité et l'exploitation des données d'absences exportées depuis l'application 
-                        de pointage pour faciliter le travail d'analyse des ressources humaines.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai développé un filtre dynamique permettant de trier les absences par catégorie 
-                        (maladie, congés, heures supplémentaires, etc.). Cela a permis de rendre les données 
-                        exportées beaucoup plus structurées et faciles à exploiter.
-                    </p>
-                    
-                    <h4>Résultats</h4>
-                    <p>
-                        La fonctionnalité de filtrage a permis d'améliorer considérablement l'efficacité des 
-                        utilisateurs qui exploitent ces données. Les ressources humaines peuvent désormais 
-                        traiter et analyser les absences de manière beaucoup plus rapide et précise.
-                    </p>
-                    
-                    <div class="project-link-container">
-                        <a href="projet1.html" class="btn-project-link">Voir le projet complet</a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Projet 2 -->
-            <div class="project-card" data-category="app">
-                <div class="project-image">
-                    <img src="ListeDeCourse.jpeg" alt="Liste de courses">
-                    <div class="project-overlay">
-                        <a href="#" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
+                <!-- Projet Entreprise 2 - Site vitrine MN Pizza -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="logomnpizza copie.png" alt="MN Pizza site vitrine">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Site vitrine Mn Pizza</h3>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <p class="project-description">
+                            Conception et développement d'un site vitrine pour la pizzeria MN Pizza, 
+                            permettant de présenter les produits et services de l'entreprise aux clients potentiels.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Créer une présence en ligne attractive pour une nouvelle pizzeria locale 
+                            afin d'augmenter sa visibilité et d'attirer de nouveaux clients.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai développé un site vitrine responsive présentant le menu, les horaires d'ouverture, 
+                            les coordonnées et l'histoire de la pizzeria, avec une interface moderne et conviviale.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Présentation des menus et des spécialités</li>
+                            <li>Informations de contact et localisation</li>
+                            <li>Galerie photo des plats</li>
+                            <li>Design responsive adaptable à tous les écrans</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>HTML5, CSS3, JavaScript, Design responsive</p>
                     </div>
                 </div>
-                <div class="project-content">
-                    <h3>Application Liste de Courses</h3>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Terminal</span>
-                    </div>
-                    <p class="project-description">
-                        Programme Python pour gérer une liste de courses via terminal, permettant d'ajouter, 
-                        supprimer et modifier des articles avec leurs quantités.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Créer une application simple mais fonctionnelle permettant de gérer une liste de courses
-                        en utilisant uniquement l'interface terminal.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai développé un programme Python qui initialise une liste avec des articles de base
-                        (pâtes, sauce tomate, parmesan) et permet d'interagir avec cette liste à travers un menu
-                        dans le terminal.
-                    </p>
-                    
-                    <h4>Fonctionnalités</h4>
-                    <ul>
-                        <li>Ajout d'articles avec quantité</li>
-                        <li>Suppression d'articles par numéro</li>
-                        <li>Modification d'articles existants</li>
-                        <li>Affichage de la liste complète</li>
-                    </ul>
-                    
-                    <h4>Technologies utilisées</h4>
-                    <p>Python, Programmation orientée objet, Interface terminal</p>
-                </div>
-            </div>
 
-            <!-- Projet 3 -->
-            <div class="project-card" data-category="app">
-                <div class="project-image">
-                    <img src="TexteAventure.jpeg" alt="Jeu d'aventure textuelle">
-                    <div class="project-overlay">
-                        <a href="#" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
+                <!-- Projet Entreprise 3 - Support IT -->
+                <div class="project-card" data-category="support">
+                    <div class="project-image">
+                        <img src="support-it.jpg" alt="Support IT">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="project-content">
-                    <h3>Jeu d'Aventure Textuelle</h3>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">POO</span>
-                        <span class="tag">Game Design</span>
+                    <div class="project-content">
+                        <h3>Support IT Mn Pizza</h3>
+                        <div class="project-tags">
+                            <span class="tag">Maintenance</span>
+                            <span class="tag">Dépannage</span>
+                            <span class="tag">Formation</span>
+                        </div>
+                        <p class="project-description">
+                            Gestion du support technique et informatique pour l'entreprise MN Pizza, 
+                            incluant la maintenance des équipements et la formation du personnel.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
                     </div>
-                    <p class="project-description">
-                        Jeu d'aventure textuel permettant d'explorer un lycée fictif en incarnant un personnage 
-                        doté de pouvoirs spéciaux et d'interagir avec l'environnement.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Assurer le bon fonctionnement des outils informatiques dans un environnement 
+                            de restauration et former le personnel à leur utilisation optimale.
+                        </p>
+                        
+                        <h4>Mes responsabilités</h4>
+                        <ul>
+                            <li>Installation et configuration des postes de travail</li>
+                            <li>Maintenance préventive et corrective des équipements</li>
+                            <li>Résolution des problèmes techniques</li>
+                            <li>Formation du personnel sur les outils informatiques</li>
+                            <li>Documentation des procédures et des solutions</li>
+                        </ul>
+                        
+                        <h4>Résultats</h4>
+                        <p>
+                            Amélioration de l'efficacité opérationnelle grâce à des systèmes informatiques 
+                            fonctionnels et un personnel bien formé à leur utilisation.
+                        </p>
                     </div>
-                </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Développer un jeu d'aventure textuel interactif avec un système de personnalisation
-                        de personnage, de navigation entre différents lieux et d'interactions avec l'environnement.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai créé un programme Python qui permet aux joueurs de personnaliser leur personnage
-                        en choisissant un âge et un pouvoir spécial, puis de naviguer entre différents lieux
-                        d'un lycée fictif.
-                    </p>
-                    
-                    <h4>Fonctionnalités</h4>
-                    <ul>
-                        <li>Création de personnage avec choix d'âge et de pouvoir</li>
-                        <li>Navigation entre différents lieux (hall d'entrée, classes, cafétéria, etc.)</li>
-                        <li>Interactions contextuelles selon les lieux (observer, manger, combattre)</li>
-                        <li>Système de collecte d'objets et de badges</li>
-                        <li>Progression narrative basée sur les choix du joueur</li>
-                    </ul>
-                    
-                    <h4>Technologies utilisées</h4>
-                    <p>Python, Programmation orientée objet, Conception narrative interactive</p>
                 </div>
             </div>
-            
-            <!-- Projet 4 -->
-            <div class="project-card" data-category="web">
-                <div class="project-image">
-                    <img src="portfolio.jpg" alt="Portfolio personnel">
-                    <div class="project-overlay">
-                        <a href="#" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
+        </section>
+
+        <!-- Section des réalisations en école -->
+        <section class="realisations-section">
+            <h2 class="section-title">Réalisations en Formation</h2>
+            <div class="projects-container">
+                <!-- Projet 1 - TP Compagnie -->
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <img src="tp-compagnie.jpg" alt="TP Compagnie">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Tp compagnie</h3>
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">WPF</span>
+                        </div>
+                        <p class="project-description">
+                            Application développée dans le cadre de ma formation pour gérer les opérations
+                            d'une compagnie aérienne fictive.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Concevoir une application permettant de gérer les vols, les réservations et les clients
+                            d'une compagnie aérienne fictive dans un environnement sécurisé.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai développé une application WPF reliée à une base de données SQL permettant
+                            la gestion complète des opérations d'une compagnie aérienne.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Gestion des vols et des destinations</li>
+                            <li>Système de réservation et d'annulation</li>
+                            <li>Gestion des clients et de leurs informations</li>
+                            <li>Tableau de bord administratif</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>C#, WPF, SQL Server, Entity Framework</p>
                     </div>
                 </div>
-                <div class="project-content">
-                    <h3>Portfolio Personnel</h3>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
+
+                <!-- Projet 2 - Billeterie -->
+                <div class="project-card" data-category="web app">
+                    <div class="project-image">
+                        <img src="billeterie.jpg" alt="Billeterie">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
                     </div>
-                    <p class="project-description">
-                        Conception et développement de mon portfolio personnel présentant mes compétences, 
-                        projets et expériences professionnelles dans un design moderne et responsive.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
+                    <div class="project-content">
+                        <h3>Billeterie</h3>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <p class="project-description">
+                            Système de billetterie en ligne permettant la vente et la gestion de billets
+                            pour différents types d'événements.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Créer une plateforme de billetterie en ligne sécurisée et intuitive pour la gestion
+                            et la vente de billets d'événements.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai développé une application web complète avec un système de paiement simulé,
+                            une gestion d'événements et un suivi des ventes de billets.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Catalogue d'événements avec recherche et filtres</li>
+                            <li>Système de réservation et paiement</li>
+                            <li>Génération de billets numériques</li>
+                            <li>Interface administrateur pour la gestion des événements</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>PHP, MySQL, JavaScript, HTML/CSS, Bootstrap</p>
                     </div>
                 </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Créer un portfolio professionnel qui mette en valeur mes compétences et projets tout 
-                        en offrant une navigation intuitive et une expérience utilisateur agréable.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai développé ce site web en utilisant HTML, CSS et JavaScript pour créer une 
-                        interface moderne et responsive. J'ai structuré le contenu en sections distinctes 
-                        pour faciliter la navigation et la lecture.
-                    </p>
-                    
-                    <h4>Fonctionnalités</h4>
-                    <ul>
-                        <li>Design responsive adapté à tous les écrans</li>
-                        <li>Navigation fluide entre les différentes sections</li>
-                        <li>Présentations détaillées des projets avec filtres</li>
-                        <li>Animations et transitions pour une meilleure expérience utilisateur</li>
-                    </ul>
-                    
-                    <h4>Technologies utilisées</h4>
-                    <p>HTML5, CSS3, JavaScript, Design responsive</p>
+
+                <!-- Projet 3 - Text Adventure -->
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <img src="TexteAventure.jpeg" alt="Jeu d'aventure textuelle">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Text Adventure</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">POO</span>
+                            <span class="tag">Game Design</span>
+                        </div>
+                        <p class="project-description">
+                            Jeu d'aventure textuel permettant d'explorer un lycée fictif en incarnant un personnage 
+                            doté de pouvoirs spéciaux et d'interagir avec l'environnement.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Développer un jeu d'aventure textuel interactif avec un système de personnalisation
+                            de personnage, de navigation entre différents lieux et d'interactions avec l'environnement.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai créé un programme Python qui permet aux joueurs de personnaliser leur personnage
+                            en choisissant un âge et un pouvoir spécial, puis de naviguer entre différents lieux
+                            d'un lycée fictif.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Création de personnage avec choix d'âge et de pouvoir</li>
+                            <li>Navigation entre différents lieux (hall d'entrée, classes, cafétéria, etc.)</li>
+                            <li>Interactions contextuelles selon les lieux (observer, manger, combattre)</li>
+                            <li>Système de collecte d'objets et de badges</li>
+                            <li>Progression narrative basée sur les choix du joueur</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>Python, Programmation orientée objet, Conception narrative interactive</p>
+                    </div>
+                </div>
+                
+                <!-- Projet 4 - Liste de Course -->
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <img src="ListeDeCourse.jpeg" alt="Liste de courses">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Liste de Course</h3>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Terminal</span>
+                        </div>
+                        <p class="project-description">
+                            Programme Python pour gérer une liste de courses via terminal, permettant d'ajouter, 
+                            supprimer et modifier des articles avec leurs quantités.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Créer une application simple mais fonctionnelle permettant de gérer une liste de courses
+                            en utilisant uniquement l'interface terminal.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai développé un programme Python qui initialise une liste avec des articles de base
+                            (pâtes, sauce tomate, parmesan) et permet d'interagir avec cette liste à travers un menu
+                            dans le terminal.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Ajout d'articles avec quantité</li>
+                            <li>Suppression d'articles par numéro</li>
+                            <li>Modification d'articles existants</li>
+                            <li>Affichage de la liste complète</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>Python, Programmation orientée objet, Interface terminal</p>
+                    </div>
+                </div>
+
+                <!-- Projet 5 - Les 4 fantastiques -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="portfolio.jpg" alt="Les 4 fantastiques">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Les 4 fantastiques</h3>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <p class="project-description">
+                            Site web dédié aux personnages des 4 fantastiques, présentant leurs histoires,
+                            pouvoirs et adaptations cinématographiques.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Créer un site web interactif et attractif présentant l'univers des 4 fantastiques
+                            avec une navigation fluide et un design cohérent.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai développé un site web avec un design moderne inspiré de l'univers Marvel,
+                            présentant chaque personnage avec ses caractéristiques et une galerie d'images.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Présentation détaillée de chaque personnage</li>
+                            <li>Galerie d'images des comics et films</li>
+                            <li>Chronologie des apparitions</li>
+                            <li>Design responsive adapté à tous les écrans</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>HTML5, CSS3, JavaScript, Design responsive</p>
+                    </div>
+                </div>
+                
+                <!-- Projet 6 - Gestion Epi -->
+                <div class="project-card" data-category="app data">
+                    <div class="project-image">
+                        <img src="gestion-stock.jpg" alt="Gestion EPI">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gestion Epi</h3>
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">WPF</span>
+                        </div>
+                        <p class="project-description">
+                            Application de gestion des Équipements de Protection Individuelle (EPI) pour
+                            le suivi des attributions, maintenances et conformités.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Développer une solution efficace pour la gestion des équipements de protection 
+                            individuelle permettant d'assurer le suivi des attributions et le respect des normes.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai créé une application Windows avec C# et WPF, connectée à une base de données 
+                            SQL Server pour stocker et gérer les données des équipements et des utilisateurs.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Inventaire des équipements disponibles</li>
+                            <li>Suivi des attributions par employé</li>
+                            <li>Alertes pour les dates de vérification et maintenance</li>
+                            <li>Gestion de la conformité aux normes de sécurité</li>
+                            <li>Génération de rapports</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>C#, WPF, SQL Server, Entity Framework</p>
+                    </div>
+                </div>
+                
+                <!-- Projet 7 - Treiinquille -->
+                <div class="project-card" data-category="web app">
+                    <div class="project-image">
+                        <img src="meteo-app.jpg" alt="Treiinquille">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-view-details">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Treiinquille</h3>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">API REST</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <p class="project-description">
+                            Application web de suivi des transports en commun en temps réel, permettant
+                            aux utilisateurs de planifier leurs déplacements efficacement.
+                        </p>
+                        <div class="project-footer">
+                            <button class="btn-toggle-details">
+                                <span class="show-text">Voir plus</span>
+                                <span class="hide-text">Réduire</span>
+                                <i class="fas fa-chevron-down arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h4>Le défi</h4>
+                        <p>
+                            Créer une application permettant aux usagers des transports en commun de suivre
+                            en temps réel les horaires, retards et perturbations sur leur trajet.
+                        </p>
+                        
+                        <h4>Ma solution</h4>
+                        <p>
+                            J'ai développé une application web utilisant des API de transport pour récupérer
+                            les données en temps réel et les présenter de manière intuitive aux utilisateurs.
+                        </p>
+                        
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Suivi en temps réel des trains et bus</li>
+                            <li>Alertes de retard et perturbations</li>
+                            <li>Recherche d'itinéraires optimaux</li>
+                            <li>Favoris pour les trajets habituels</li>
+                            <li>Notifications personnalisées</li>
+                        </ul>
+                        
+                        <h4>Technologies utilisées</h4>
+                        <p>JavaScript, HTML5, CSS3, API REST, Progressive Web App</p>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Projet 5 -->
-            <div class="project-card" data-category="web data">
-                <div class="project-image">
-                    <img src="e-commerce.jpg" alt="Boutique en ligne">
-                    <div class="project-overlay">
-                        <a href="#" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Système de Boutique en Ligne</h3>
-                    <div class="project-tags">
-                        <span class="tag">PHP</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <p class="project-description">
-                        Développement d'une plateforme e-commerce avec système de panier, gestion des produits 
-                        et interface administrateur pour une petite entreprise locale.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Créer une boutique en ligne fonctionnelle permettant à une petite entreprise de vendre 
-                        ses produits en ligne avec une interface simple pour les clients et une gestion facile 
-                        pour les administrateurs.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai développé une application web avec PHP et MySQL pour la gestion des produits, 
-                        des utilisateurs et des commandes. L'interface utilisateur a été conçue pour être 
-                        intuitive et responsive.
-                    </p>
-                    
-                    <h4>Fonctionnalités</h4>
-                    <ul>
-                        <li>Catalogue de produits avec filtres et recherche</li>
-                        <li>Système de panier et processus de commande</li>
-                        <li>Espace administrateur pour la gestion des produits et commandes</li>
-                        <li>Gestion des utilisateurs et authentification sécurisée</li>
-                    </ul>
-                    
-                    <h4>Technologies utilisées</h4>
-                    <p>PHP, MySQL, JavaScript, HTML/CSS, Responsive Design</p>
-                </div>
-            </div>
-            
-            <!-- Projet 6 -->
-            <div class="project-card" data-category="app data">
-                <div class="project-image">
-                    <img src="gestion-stock.jpg" alt="Application de gestion de stock">
-                    <div class="project-overlay">
-                        <a href="#" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Application de Gestion de Stock</h3>
-                    <div class="project-tags">
-                        <span class="tag">C#</span>
-                        <span class="tag">SQL Server</span>
-                        <span class="tag">WPF</span>
-                    </div>
-                    <p class="project-description">
-                        Conception et développement d'une application desktop pour la gestion des stocks et 
-                        des inventaires d'une entreprise de distribution.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Développer une solution efficace pour la gestion des stocks et des inventaires 
-                        permettant de suivre les mouvements de produits, de gérer les commandes et de générer 
-                        des rapports.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai créé une application Windows avec C# et WPF, connectée à une base de données 
-                        SQL Server pour stocker et gérer les données. L'interface a été conçue pour être 
-                        ergonomique et intuitive.
-                    </p>
-                    
-                    <h4>Fonctionnalités</h4>
-                    <ul>
-                        <li>Suivi des entrées et sorties de stock en temps réel</li>
-                        <li>Système d'alerte pour les stocks bas</li>
-                        <li>Gestion des fournisseurs et des commandes</li>
-                        <li>Génération de rapports et statistiques</li>
-                        <li>Système de rôles et permissions utilisateurs</li>
-                    </ul>
-                    
-                    <h4>Technologies utilisées</h4>
-                    <p>C#, WPF, MVVM, SQL Server, Entity Framework</p>
-                </div>
-            </div>
-            
-            <!-- Projet 7 -->
-            <div class="project-card" data-category="web app">
-                <div class="project-image">
-                    <img src="meteo-app.jpg" alt="Application météo">
-                    <div class="project-overlay">
-                        <a href="#" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Application Météo</h3>
-                    <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">API REST</span>
-                        <span class="tag">CSS3</span>
-                    </div>
-                    <p class="project-description">
-                        Développement d'une application web météo utilisant une API externe pour afficher 
-                        les prévisions météorologiques actuelles et futures pour n'importe quelle ville.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Créer une application web intuitive permettant aux utilisateurs de consulter 
-                        rapidement les prévisions météorologiques pour n'importe quelle ville dans le monde.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai développé une application web utilisant JavaScript pour interroger une API 
-                        météorologique externe et afficher les données de manière claire et attrayante 
-                        avec des transitions fluides.
-                    </p>
-                    
-                    <h4>Fonctionnalités</h4>
-                    <ul>
-                        <li>Recherche de villes par nom</li>
-                        <li>Affichage des conditions météorologiques actuelles</li>
-                        <li>Prévisions sur 5 jours</li>
-                        <li>Visualisation des données (température, humidité, vent)</li>
-                        <li>Géolocalisation pour la météo locale</li>
-                    </ul>
-                    
-                    <h4>Technologies utilisées</h4>
-                    <p>JavaScript, HTML5, CSS3, API REST, Responsive Design</p>
-                </div>
-            </div>
-            
-            <!-- Projet 8 -->
-            <div class="project-card" data-category="app data">
-                <div class="project-image">
-                    <img src="quiz-app.jpg" alt="Application de quiz">
-                    <div class="project-overlay">
-                        <a href="#" class="btn-view-details">
-                            <i class="fas fa-eye"></i> Voir détails
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Application de Quiz Éducatif</h3>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQLite</span>
-                        <span class="tag">Tkinter</span>
-                    </div>
-                    <p class="project-description">
-                        Création d'une application de quiz éducatif avec différentes catégories de questions, 
-                        système de score et suivi de progression pour un établissement scolaire.
-                    </p>
-                    <div class="project-footer">
-                        <button class="btn-toggle-details">
-                            <span class="show-text">Voir plus</span>
-                            <span class="hide-text">Réduire</span>
-                            <i class="fas fa-chevron-down arrow-icon"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h4>Le défi</h4>
-                    <p>
-                        Développer une application de quiz éducatif interactive et engageante pour aider 
-                        les élèves à réviser différentes matières scolaires.
-                    </p>
-                    
-                    <h4>Ma solution</h4>
-                    <p>
-                        J'ai créé une application desktop avec Python et Tkinter, utilisant une base de 
-                        données SQLite pour stocker les questions, les réponses et les scores des utilisateurs.
-                    </p>
-                    
-                    <h4>Fonctionnalités</h4>
-                    <ul>
-                        <li>Plusieurs catégories de questions (mathématiques, sciences, histoire, etc.)</li>
-                        <li>Différents niveaux de difficulté</li>
-                        <li>Système de score et classement</li>
-                        <li>Suivi de la progression par élève</li>
-                        <li>Interface administrateur pour ajouter ou modifier des questions</li>
-                    </ul>
-                    
-                    <h4>Technologies utilisées</h4>
-                    <p>Python, Tkinter, SQLite, Programmation orientée objet</p>
-                </div>
-            </div>
-        </div>
+        </section>
 
         <!-- Pagination -->
         <div class="pagination">

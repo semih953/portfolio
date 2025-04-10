@@ -1,11 +1,11 @@
 /* Variables pour les couleurs */
 :root {
-    --primary-purple: #673ab7;
+    --primary-purple: hsl(262, 52%, 47%);
     --dark-purple: #4a148c;
     --light-purple: #f3e5f5;
     --accent-purple: #9c27b0;
     --text-color: #333;
-    --text-light: #666;
+    --text-light: #333;
     --card-bg: white;
     --section-bg: #f9f9f9;
     --border-radius: 12px;
@@ -17,7 +17,7 @@
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #708090;
+    background-color: #4a148c;
   }
   
   main {
@@ -553,3 +553,11 @@
   .objectif-card:hover .objectif-icon i {
     transform: scale(1.2);
   }
+
+  /* Footer styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px 20px;
+  margin-top: 50px;
+}
