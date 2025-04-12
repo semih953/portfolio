@@ -1,148 +1,465 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GestEPI - Présentation du Projet</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        
-        header {
-            background-color: #1976d2;
-            color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        
-        h1 {
-            margin: 0;
-        }
-        
-        h2 {
-            color: #1976d2;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        
-        ul {
-            padding-left: 20px;
-        }
-        
-        li {
-            margin-bottom: 10px;
-        }
-        
-        .data-model-container {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .data-model-container img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .image-caption {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 10px;
-        }
-        
-        footer {
-            margin-top: 40px;
-            padding-top: 10px;
-            border-top: 1px solid #ccc;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion EPI - SAHIN Semih</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    /* CSS pour gérer les images techniques */
+    .diagram-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .diagram-image {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .diagram-image:hover {
+      transform: translateY(-5px);
+    }
+
+    .diagram-image img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #eee;
+    }
+
+    .diagram-image h4 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 1.2rem;
+    }
+
+    /* Bannière du projet */
+    .banner-image {
+      width: 100%;
+      max-height: 300px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .banner-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Styles pour les étapes du projet */
+    .timeline-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #673ab7;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border: 4px solid #673ab7;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-left {
+      left: 0;
+    }
+
+    .timeline-right {
+      left: 50%;
+    }
+
+    .timeline-left::after {
+      right: -12px;
+    }
+
+    .timeline-right::after {
+      left: -12px;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-content h4 {
+      margin-top: 0;
+      color: #673ab7;
+    }
+
+    /* Fonctionnalités */
+    .features-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .feature-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      color: #673ab7;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .feature-title {
+      font-size: 1.2rem;
+      color: #673ab7;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .feature-description {
+      color: #666;
+      text-align: center;
+    }
+
+    /* Modal pour affichage plein écran */
+    .fullscreen-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .fullscreen-modal.active {
+      display: flex;
+    }
+
+    .fullscreen-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Adaptation pour mobile */
+    @media screen and (max-width: 768px) {
+      .timeline-container::after {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item::after {
+        left: 19px;
+      }
+      
+      .timeline-right {
+        left: 0;
+      }
+
+      .diagram-container {
+        grid-template-columns: 1fr;
+      }
+
+      .features-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>GestEPI</h1>
-        <p>Gestion des Équipements de Protection Individuelle</p>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Présentation du projet</h2>
-            <p>
-                GestEPI est une application développée pour les sociétés de travaux en hauteur qui emploient des cordistes. 
-                L'application permet de gérer et suivre les Équipements de Protection Individuelle (EPI) utilisés par ces professionnels.
-                Le suivi rigoureux des EPI est essentiel pour garantir la sécurité des travailleurs en hauteur.
-            </p>
-        </section>
-        
-        <section>
-            <h2>Problématique</h2>
-            <p>
-                Les équipements de protection individuelle doivent être suivis et contrôlés de manière fréquente pour garantir la sécurité des cordistes.
-                Actuellement, ce suivi est souvent réalisé sur papier ou dans des fichiers tableurs, ce qui peut entraîner des erreurs, des oublis, ou 
-                des difficultés dans la gestion des contrôles périodiques.
-            </p>
-        </section>
-        
-        <section>
-            <h2>Fonctionnalités principales</h2>
-            <ul>
-                <li><strong>Saisie d'EPI</strong> - Enregistrement des différents types d'EPI (cordes, sangles, baudriers, casques, etc.) avec leurs caractéristiques.</li>
-                <li><strong>Saisie des contrôles</strong> - Documentation des contrôles effectués avec date, statut et remarques.</li>
-                <li><strong>Consultation des EPI</strong> - Visualisation des EPI et de leur historique de contrôle.</li>
-                <li><strong>Détail des contrôles</strong> - Accès aux informations détaillées sur chaque contrôle effectué.</li>
-                <li><strong>Alertes</strong> - Système d'alerte pour les contrôles à venir.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Architecture technique</h2>
-            <p>
-                L'application est construite avec une architecture moderne en trois parties:
-            </p>
-            <ul>
-                <li><strong>Frontend</strong> - Interface utilisateur développée avec React et Material UI</li>
-                <li><strong>Backend</strong> - API REST développée avec Express.js et TypeScript</li>
-                <li><strong>Modèle de données</strong> - Types partagés entre le frontend et le backend via un package npm</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Données gérées</h2>
-            <ul>
-                <li><strong>EPI</strong> - Identifiant, marque, modèle, numéro de série, dates d'achat, de fabrication et de mise en service, etc.</li>
-                <li><strong>Contrôles</strong> - Date, opérateur, EPI concerné, statut (opérationnel, à réparer, mis au rebut), remarques</li>
-                <li><strong>Types d'EPI</strong> - Casques, baudriers, cordes, mousquetons, systèmes d'assurage, etc.</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Modèle de données</h2>
-            <div class="data-model-container">
-                <img src="/api/placeholder/600/400" alt="Modèle de données GestEPI">
-                <p class="image-caption">Diagramme du modèle de données de l'application GestEPI</p>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
-            <p><a href="https://github.com/semih953/GestEPI.git" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
+  <div class="container">
+    <div class="header-info">
+      <h1>SAHIN Semih</h1>
+      <p>Développeur Fullstack</p>
+    </div>
+    <nav>
+      <a href="index.html" class="nav-item" data-active-color="orange">Accueil</a>
+      <a href="realisations.html" class="nav-item is-active" data-active-color="green">Réalisations</a>
+      <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+      <a href="veille.html" class="nav-item" data-active-color="red">Veille</a>
+      <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+      <span class="nav-indicator"></span>
+    </nav>
+  </div>
+
+  <main>
+    <section class="project-introduction">
+      <h1>Gestion des Équipements de Protection Individuelle (EPI)</h1>
+      
+      <!-- Bannière du projet -->
+      <div class="banner-image">
+        <img src="gestion-stock.jpg" alt="Image de l'application Gestion EPI">
+      </div>
+    </section>
+
+    <section class="project-details">
+      <h2>Description du projet</h2>
+      <p>
+        Ce projet a consisté à développer une application complète pour la gestion des Équipements de Protection Individuelle (EPI), permettant aux entreprises de suivre les attributions, les maintenances et la conformité aux normes de sécurité.
+      </p>
+
+      <h3>Objectifs</h3>
+      <p>
+        L'objectif principal était de créer une solution efficace pour la gestion des équipements de protection individuelle permettant d'assurer le suivi des attributions et le respect des normes de sécurité.
+      </p>
+
+      <!-- Diagrammes du projet -->
+      <div class="diagram-container">
+        <div class="diagram-image">
+          <h4>Diagramme de cas d'utilisation</h4>
+          <img src="diagramme_cas_utilisation.png" alt="Diagramme de cas d'utilisation">
         </div>
-    </footer>
+        
+        <div class="diagram-image">
+          <h4>Diagramme de classes métier</h4>
+          <img src="diagramme_classes_metier(2).png" alt="Diagramme de classes métier">
+        </div>
+      </div>
+
+      <h3>Fonctionnalités principales</h3>
+      <div class="features-container">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h4 class="feature-title">Inventaire des EPI</h4>
+          <p class="feature-description">Gestion complète des équipements disponibles avec leurs caractéristiques techniques</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h4 class="feature-title">Suivi des attributions</h4>
+          <p class="feature-description">Attribution des équipements aux employés avec historique complet</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <h4 class="feature-title">Système d'alerte</h4>
+          <p class="feature-description">Notifications pour les dates de vérification et maintenance</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h4 class="feature-title">Conformité</h4>
+          <p class="feature-description">Suivi de la conformité aux normes de sécurité en vigueur</p>
+        </div>
+      </div>
+
+      <h3>Étapes de développement</h3>
+      <div class="timeline-container">
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h4>Analyse des besoins</h4>
+            <p>Identification des exigences spécifiques et définition du périmètre fonctionnel</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-content">
+            <h4>Conception</h4>
+            <p>Élaboration des diagrammes UML et des maquettes d'interface</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h4>Développement</h4>
+            <p>Implémentation des fonctionnalités avec C# et WPF</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-content">
+            <h4>Tests et validation</h4>
+            <p>Exécution des tests fonctionnels et corrections des anomalies</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h4>Déploiement</h4>
+            <p>Installation et formation des utilisateurs</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Solutions proposées</h3>
+      <p>
+        J'ai créé une application Windows avec C# et WPF, connectée à une base de données SQL Server pour stocker et gérer les données des équipements et des utilisateurs. L'interface a été conçue pour être intuitive et adaptée aux besoins des responsables sécurité.
+      </p>
+
+      <h3>Résultats obtenus</h3>
+      <p>
+        Cette application a permis d'améliorer significativement le suivi des EPI, facilitant le travail des responsables sécurité et garantissant une meilleure conformité aux normes en vigueur. Les délais d'intervention pour la maintenance des équipements ont été réduits et la traçabilité des attributions a été grandement améliorée.
+      </p>
+      
+      <h3>Technologies utilisées</h3>
+      <ul>
+        <li>Langages : C#, SQL</li>
+        <li>Framework : WPF (Windows Presentation Foundation)</li>
+        <li>Base de données : SQL Server</li>
+        <li>ORM : Entity Framework</li>
+        <li>Outils de développement : Visual Studio, SQL Server Management Studio</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Section des logos des partenaires -->
+  <div class="logos-partners">
+    <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+      <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+    </a>
+    <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+      <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+    </a>
+    <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+      <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>SAHIN Semih</h3>
+        <p>Développeur Fullstack</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="entreprise.html">Entreprise</a>
+        <a href="veille.html">Veille</a>
+        <a href="bilan.html">Bilan</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- Modal pour l'affichage en plein écran -->
+  <div class="fullscreen-modal">
+    <span class="close-modal">&times;</span>
+    <img id="fullscreen-img" src="" alt="Image en plein écran">
+  </div>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+  <script>
+    // JavaScript pour gérer l'affichage en plein écran des images
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélectionner toutes les images qui peuvent être agrandies
+        const zoomableImages = document.querySelectorAll('.diagram-image img');
+        const fullscreenModal = document.querySelector('.fullscreen-modal');
+        const fullscreenImg = document.getElementById('fullscreen-img');
+        const closeModalBtn = document.querySelector('.close-modal');
+        
+        // Ajouter un curseur pointer sur les images pour indiquer qu'elles sont cliquables
+        zoomableImages.forEach(img => {
+            img.style.cursor = 'pointer';
+            
+            // Ajouter un événement de clic pour ouvrir le modal
+            img.addEventListener('click', function() {
+                fullscreenImg.src = this.src;
+                fullscreenModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Empêcher le défilement en arrière-plan
+            });
+        });
+        
+        // Fermer le modal en cliquant sur le bouton de fermeture
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', function() {
+                fullscreenModal.classList.remove('active');
+                document.body.style.overflow = ''; // Réactiver le défilement
+            });
+        }
+        
+        // Fermer// Fermer le modal en cliquant n'importe où
+        if (fullscreenModal) {
+            fullscreenModal.addEventListener('click', function(e) {
+                if (e.target === fullscreenModal) {
+                    fullscreenModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Réactiver le défilement
+                }
+            });
+        }
+        
+        // Fermer le modal avec la touche Echap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && fullscreenModal.classList.contains('active')) {
+                fullscreenModal.classList.remove('active');
+                document.body.style.overflow = ''; // Réactiver le défilement
+            }
+        });
+    });
+  </script>
 </body>
 </html>

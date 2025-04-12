@@ -3,295 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet Treiinquille</title>
+    <title>Projet - SAHIN Semih</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
+        /* CSS pour gérer les images ajoutées */
         :root {
-            --primary-color: #4c1d95;
-            --secondary-color: #6366f1;
-            --light-color: #e5e7eb;
-            --dark-color: #1f2937;
-            --white: #ffffff;
-            --success-color: #28a745;
+            --primary-color: #673ab7;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        /* Style général pour les images */
+        .project-image img, 
+        .diagram-image img,
+        .banner-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        body {
-            background-color: #f5f5f5;
-            color: var(--dark-color);
-            line-height: 1.6;
+
+        .project-image img:hover, 
+        .diagram-image img:hover,
+        .banner-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 40px 0 30px;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-        
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .team-info {
-            font-size: 1rem;
-            margin-top: 10px;
-            opacity: 0.8;
-        }
-        
-        .card {
-            background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 30px;
+
+        /* Style pour l'image de bannière */
+        .banner-image {
+            width: 100%;
+            max-height: 300px;
+            overflow: hidden;
             margin-bottom: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
-        
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light-color);
+
+        .banner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius);
         }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        .highlight {
-            background-color: var(--light-color);
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        
-        .image-placeholder {
-            background-color: var(--light-color);
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 2px dashed var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-        
-        .image-placeholder:hover {
-            background-color: #ddd;
-            cursor: pointer;
-        }
-        
-        .image-placeholder p {
-            color: var(--dark-color);
-            font-weight: bold;
-            margin: 0;
-        }
-        
-        .features {
+
+        /* Style pour les diagrammes */
+        .diagram-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
             margin: 30px 0;
         }
-        
-        .feature-card {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+        .diagram-image {
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             transition: transform 0.3s ease;
         }
-        
-        .feature-card:hover {
+
+        .diagram-image:hover {
             transform: translateY(-5px);
         }
-        
-        .feature-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
+
+        .diagram-image img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #eee;
         }
-        
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 30px auto;
-        }
-        
-        .timeline-container {
-            padding: 10px 50px;
-            position: relative;
-            width: 50%;
-            left: 0;
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: var(--white);
+
+        .diagram-image h4 {
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-            border-radius: 20px 20px 0 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
         }
-        
+
+        /* Style pour l'image Gantt */
+        .gantt-image {
+            max-width: 100%;
+            overflow-x: auto;
+            margin: 30px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .gantt-image img {
+            width: 100%;
+            min-width: 800px; /* Pour assurer une bonne visibilité du diagramme de Gantt */
+            height: auto;
+            border: 1px solid #eee;
+        }
+
+        .gantt-image h4 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Pour l'affichage en plein écran sur clic */
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .fullscreen-modal.active {
+            display: flex;
+        }
+
+        .fullscreen-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Adaptation pour mobile */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .features {
+            .diagram-container {
                 grid-template-columns: 1fr;
             }
             
-            .timeline-container {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+            .gantt-image {
+                padding: 10px;
+            }
+            
+            .gantt-image img {
+                min-width: 600px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Projet Treiinquille</h1>
-            <p>Application de gestion des trajets temporels pour l'agence TempoTrain</p>
-            <div class="team-info">
-                <p>Équipe : Semih Cakici, Semih Sahin, Emir Sen | 2024-2025</p>
-            </div>
-        </div>
-    </header>
-    
     <div class="container">
-        <section class="card">
-            <h2>Contexte du Projet</h2>
-            <p><strong>L'agence TempoTrain</strong> est une entreprise spécialisée dans les voyages temporels. Grâce à ses services, les voyageurs peuvent se rendre dans différentes époques, en suivant des itinéraires sécurisés et programmés à l'avance.</p>
-            
-            <p>L'agence garantit des trajets ponctuels et synchronisés, adaptés aux besoins des conducteurs et des passagers, tout en assurant une gestion rigoureuse du planning et du suivi des billets pour chaque voyage.</p>
-            
-            <div class="image-placeholder">
-                <p>Bannière Treiinquille</p>
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Objectifs du Projet</h2>
-            <p>Le projet vise à développer une application de gestion des trajets temporels de TempoTrain. Cette application permettra aux managers et conducteurs d'avoir une interface intuitive pour gérer le planning et suivre les ventes de billets, optimisant ainsi le fonctionnement de l'agence.</p>
-            
-            <div class="highlight">
-                <h3>Problèmes à Résoudre</h3>
-                <ul>
-                    <li><strong>Gestion du Planning des Conducteurs</strong> - Chaque conducteur doit savoir précisément quand, à quelle heure et pour quelle époque un voyage est prévu. Le planning doit être à jour en temps réel et adaptable.</li>
-                    <li><strong>Suivi des Billets et des Places Disponibles</strong> - L'application doit permettre aux managers de consulter le nombre de billets vendus pour chaque voyage et la gestion des places restantes.</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Solution Proposée</h2>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <h3>Module de Planification</h3>
-                    <p>Création et modification du planning des conducteurs, incluant les heures de départ, la date réelle et la date d'arrivée prévue dans l'époque de destination.</p>
+        <div class="header-info">
+            <h1>SAHIN Semih</h1>
+            <p>Développeur Fullstack</p>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item" data-active-color="orange">Accueil</a>
+            <a href="realisations.html" class="nav-item is-active" data-active-color="green">Réalisations</a>
+            <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+            <a href="veille.html" class="nav-item" data-active-color="red">Veille</a>
+            <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+            <span class="nav-indicator"></span>
+        </nav>
+    </div>
+
+    <main>
+        <div class="page-header">
+            <h2>Détails du Projet</h2>
+            <p>Découvrez les détails techniques et la méthodologie utilisée pour ce projet.</p>
+        </div>
+
+        <!-- Image de bannière du projet -->
+        <div class="banner-image">
+            <img src="banniere.png" alt="Bannière du projet">
+        </div>
+
+        <section class="project-details">
+            <h2 class="section-title">Présentation du Projet</h2>
+            <p>
+                Ce projet consistait à développer une application de gestion des équipements de protection individuelle (EPI) 
+                pour faciliter le suivi des attributions, des maintenances et des conformités aux normes de sécurité. L'objectif 
+                principal était de créer une solution efficace permettant aux entreprises de gérer leur inventaire d'équipements 
+                et d'assurer la sécurité de leurs employés.
+            </p>
+
+            <div class="diagram-container">
+                <div class="diagram-image">
+                    <h4>Diagramme de cas d'utilisation</h4>
+                    <img src="diagramme_cas_utilisation.png" alt="Diagramme de cas d'utilisation">
                 </div>
                 
-                <div class="feature-card">
-                    <h3>Suivi des Billets</h3>
-                    <p>Consultation du nombre de billets vendus pour chaque trajet temporel, avec une mise à jour en temps réel.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Gestion des Places</h3>
-                    <p>Indication du nombre de places restantes pour chaque voyage, permettant une gestion optimale de la capacité des trains.</p>
+                <div class="diagram-image">
+                    <h4>Diagramme de classes métier</h4>
+                    <img src="diagramme_classes_metier(2).png" alt="Diagramme de classes métier">
                 </div>
             </div>
-            
-            <div class="highlight">
-                <h3>Utilisateurs de l'Application</h3>
-                <ul>
-                    <li><strong>Managers</strong> : Pour créer, modifier et suivre les plannings et le suivi des billets.</li>
-                    <li><strong>Conducteurs</strong> : Pour consulter leurs trajets, assurer la bonne gestion de chaque voyage.</li>
-                </ul>
+
+            <h3>Planning du Projet</h3>
+            <p>
+                Le projet a été réalisé selon un planning précis pour respecter les délais imposés.
+                Voici le diagramme de Gantt qui présente les différentes phases du projet et leur durée.
+            </p>
+
+            <div class="gantt-image">
+                <h4>Diagramme de Gantt</h4>
+                <img src="gantt.png" alt="Diagramme de Gantt">
             </div>
-        </section>
-        
-        <section class="card">
-            <h2>Diagramme de Cas d'Utilisation</h2>
-            <p>Ce diagramme présente les interactions entre les différents acteurs (managers, conducteurs) et les fonctionnalités du système.</p>
-            
-            <div class="image-placeholder">
-                <p>Insérer le Diagramme de Cas d'Utilisation ici</p>
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Diagramme de Classes Métier</h2>
-            <p>Ce diagramme représente la structure des classes qui composent le modèle métier de l'application.</p>
-            
-            <div class="image-placeholder">
-                <p>Insérer le Diagramme de Classes Métier ici</p>
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Maquettes de l'Interface</h2>
-            <p>Ces maquettes présentent l'interface utilisateur de l'application et illustrent l'expérience proposée aux utilisateurs.</p>
-            
-            <div class="image-placeholder">
-                <p>Insérer les Maquettes ici</p>
-            </div>
-        </section>
-        
-        <section class="card">
-            <h2>Diagramme de Gantt</h2>
-            <p>Ce diagramme présente la planification temporelle du projet et l'organisation des différentes tâches.</p>
-            
-            <div class="image-placeholder">
-                <p>Insérer le Diagramme de Gantt ici</p>
-            </div>
-            
-            <p class="highlight">
-                Lien vers le diagramme de Gantt complet: <a href="https://docs.google.com/spreadsheets/d/10rDGZLGdYxj_BTiiNsYnD3ZwOknBP7Kthplk6Bj9mUo/edit?usp=sharing" target="_blank">Google Sheets</a>
+
+            <h3>Technologies Utilisées</h3>
+            <ul>
+                <li><strong>Langages :</strong> C#, SQL</li>
+                <li><strong>Framework :</strong> WPF (Windows Presentation Foundation)</li>
+                <li><strong>Base de données :</strong> SQL Server</li>
+                <li><strong>ORM :</strong> Entity Framework</li>
+                <li><strong>Outils de développement :</strong> Visual Studio, SQL Server Management Studio</li>
+            </ul>
+
+            <h3>Fonctionnalités Principales</h3>
+            <ul>
+                <li>Inventaire des équipements disponibles</li>
+                <li>Suivi des attributions par employé</li>
+                <li>Alertes pour les dates de vérification et maintenance</li>
+                <li>Gestion de la conformité aux normes de sécurité</li>
+                <li>Génération de rapports</li>
+            </ul>
+
+            <h3>Défis et Solutions</h3>
+            <p>
+                Au cours de ce projet, plusieurs défis ont dû être relevés :
+            </p>
+            <ul>
+                <li>
+                    <strong>Gestion des nombreuses catégories d'EPI :</strong> 
+                    Création d'une architecture flexible permettant d'ajouter facilement de nouvelles catégories
+                </li>
+                <li>
+                    <strong>Suivi des normes en constante évolution :</strong> 
+                    Implémentation d'un système d'alerte pour les mises à jour des normes
+                </li>
+                <li>
+                    <strong>Interface utilisateur intuitive :</strong> 
+                    Design UX/UI adapté aux besoins des utilisateurs finaux
+                </li>
+            </ul>
+
+            <h3>Résultats et Perspectives</h3>
+            <p>
+                Ce projet a permis de mettre en place une solution complète de gestion des EPI, facilitant 
+                le travail des responsables sécurité et améliorant la conformité aux normes en vigueur. Les 
+                perspectives d'évolution incluent l'ajout d'une application mobile pour les inventaires sur le 
+                terrain et l'intégration de QR codes pour un suivi individualisé des équipements.
             </p>
         </section>
-        
-        <section class="card">
-            <h2>Cahier Technique</h2>
-            <p>Le cahier technique contient toutes les spécifications détaillées du projet, incluant l'architecture technique, les choix de conception et les contraintes techniques.</p>
-            
-            <div class="image-placeholder">
-                <p>Insérer le Cahier Technique ici</p>
-            </div>
-        </section>
+    </main>
+
+    <!-- Section des logos des partenaires -->
+    <div class="logos-partners">
+        <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+            <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+        </a>
+        <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+            <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+        </a>
+        <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+            <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+        </a>
     </div>
-    
+
     <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>SAHIN Semih</h3>
+                <p>Développeur Fullstack</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="veille.html">Veille</a>
+                <a href="bilan.html">Bilan</a>
+            </div>
+        </div>
         <div class="footer-bottom">
             <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
-            <p><a href="https://github.com/Semiiih/Treiinquille.git" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
         </div>
     </footer>
+
+    <!-- Modal pour l'affichage en plein écran -->
+    <div class="fullscreen-modal">
+        <span class="close-modal">&times;</span>
+        <img id="fullscreen-img" src="" alt="Image en plein écran">
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script>
+        // JavaScript pour gérer l'affichage en plein écran des images
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner toutes les images qui peuvent être agrandies
+            const zoomableImages = document.querySelectorAll('.diagram-image img, .gantt-image img');
+            const fullscreenModal = document.querySelector('.fullscreen-modal');
+            const fullscreenImg = document.getElementById('fullscreen-img');
+            const closeModalBtn = document.querySelector('.close-modal');
+            
+            // Ajouter un curseur pointer sur les images pour indiquer qu'elles sont cliquables
+            zoomableImages.forEach(img => {
+                img.style.cursor = 'pointer';
+                
+                // Ajouter un événement de clic pour ouvrir le modal
+                img.addEventListener('click', function() {
+                    fullscreenImg.src = this.src;
+                    fullscreenModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Empêcher le défilement en arrière-plan
+                });
+            });
+            
+            // Fermer le modal en cliquant sur le bouton de fermeture
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function() {
+                    fullscreenModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Réactiver le défilement
+                });
+            }
+            
+            // Fermer le modal en cliquant n'importe où
+            if (fullscreenModal) {
+                fullscreenModal.addEventListener('click', function(e) {
+                    if (e.target === fullscreenModal) {
+                        fullscreenModal.classList.remove('active');
+                        document.body.style.overflow = ''; // Réactiver le défilement
+                    }
+                });
+            }
+            
+            // Fermer le modal avec la touche Echap
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && fullscreenModal.classList.contains('active')) {
+                    fullscreenModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Réactiver le défilement
+                }
+            });
+        });
+    </script>
 </body>
 </html>
