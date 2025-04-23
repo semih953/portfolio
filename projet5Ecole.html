@@ -3,40 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les4Fantastiques - Univers Marvel</title>
+    <title>Les4Fantastiques - Univers Marvel - SAHIN Semih</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
         
-        :root {
-            --primary-color: #03507E;
-            --secondary-color: #FF416C;
-            --accent-color: #ff4b2b;
-            --text-color: #333;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
+            background-color: #4a148c;
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background: linear-gradient(135deg, var(--primary-color) 30%, var(--secondary-color) 100%);
-            min-height: 100vh;
         }
         
-        .container {
+        main {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+            margin: 30px auto;
+            padding: 0 20px;
         }
         
-        header {
+        .project-header {
             text-align: center;
             padding: 2rem 0;
             background-color: rgba(255, 255, 255, 0.9);
@@ -46,7 +31,7 @@
         }
         
         h1 {
-            color: var(--primary-color);
+            color: #03507E;
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
@@ -54,13 +39,13 @@
         h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: var(--light-color);
+            color: #f8f9fa;
         }
         
         h3 {
             font-size: 1.4rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: #03507E;
         }
         
         p {
@@ -68,7 +53,7 @@
         }
         
         .intro {
-            color: var(--accent-color);
+            color: #ff4b2b;
             font-weight: 600;
             font-size: 1.2rem;
         }
@@ -107,7 +92,7 @@
         
         .feature-card i {
             font-size: 2rem;
-            color: var(--primary-color);
+            color: #03507E;
             margin-bottom: 1rem;
         }
         
@@ -119,7 +104,7 @@
         }
         
         .tech-badge {
-            background-color: var(--primary-color);
+            background-color: #03507E;
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 50px;
@@ -131,12 +116,12 @@
             background-color: #f8f9fa;
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid var(--primary-color);
+            border-left: 4px solid #03507E;
             margin-top: 1rem;
         }
         
         .code {
-            background-color: var(--dark-color);
+            background-color: #212529;
             color: white;
             padding: 1rem;
             border-radius: 5px;
@@ -145,24 +130,34 @@
             margin: 1rem 0;
         }
         
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: white;
+        .doc-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
         }
         
-        .footer-link {
+        .doc-link {
+            background-color: #03507E;
             color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
         }
         
-        .footer-link:hover {
-            opacity: 0.8;
+        .doc-link:hover {
+            background-color: #ff4b2b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
         
         @media (max-width: 768px) {
-            .container {
+            .project-header {
                 padding: 1rem;
             }
             
@@ -177,19 +172,47 @@
             .section {
                 padding: 1.5rem;
             }
+            
+            .doc-links {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="header-info">
+            <h1>SAHIN Semih</h1>
+            <p>Développeur Fullstack</p>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item" data-active-color="orange">Accueil</a>
+            <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+            <a href="realisations.html" class="nav-item is-active" data-active-color="green">Réalisations</a>
+            <a href="veille.html" class="nav-item" data-active-color="red">Veille</a>
+            <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+            <span class="nav-indicator"></span>
+        </nav>
+    </div>
+
+    <main>
+        <div class="project-header">
             <h1>Les4Fantastiques</h1>
             <p class="intro">Explorez l'univers Marvel comme jamais auparavant</p>
-        </header>
+            
+            <div class="doc-links">
+                <a href="charteGraphique.html" class="doc-link">
+                    <i class="fas fa-palette"></i> Charte Graphique
+                </a>
+                <a href="cahierDesCharges.html" class="doc-link">
+                    <i class="fas fa-file-alt"></i> Cahier des Charges
+                </a>
+            </div>
+        </div>
         
         <section class="section">
-            <h2 style="color: var(--primary-color);">À propos du projet</h2>
+            <h2 style="color: #03507E;">À propos du projet</h2>
             <p>Les4Fantastiques est une application web qui permet aux fans de Marvel de découvrir l'univers riche des super-héros, des méchants et des séries. Notre plateforme offre une expérience immersive pour tous les passionnés de l'univers Marvel.</p>
             
             <div class="features">
@@ -214,7 +237,7 @@
         </section>
         
         <section class="section">
-            <h2 style="color: var(--primary-color);">Technologies utilisées</h2>
+            <h2 style="color: #03507E;">Technologies utilisées</h2>
             <p>Notre projet est construit avec des technologies modernes pour offrir une expérience utilisateur fluide et réactive :</p>
             
             <div class="tech-stack">
@@ -247,7 +270,7 @@
         </section>
         
         <section class="section">
-            <h2 style="color: var(--primary-color);">Fonctionnalités principales</h2>
+            <h2 style="color: #03507E;">Fonctionnalités principales</h2>
             
             <div class="feature-card">
                 <h3><i class="fas fa-user-circle"></i> Gestion des comptes</h3>
@@ -269,14 +292,44 @@
                 <p>Testez vos connaissances sur l'univers Marvel avec notre quiz interactif.</p>
             </div>
         </section>
+    </main>
+    
+    <!-- Section des logos des partenaires -->
+    <div class="logos-partners">
+        <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+            <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+        </a>
+        <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+            <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+        </a>
+        <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+            <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+        </a>
     </div>
+    
     <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>SAHIN Semih</h3>
+                <p>Développeur Fullstack</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/semih-sahin-300145282" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Semiiih/Les4Fantastiques.git" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="veille.html">Veille</a>
+                <a href="bilan.html">Bilan</a>
+            </div>
+        </div>
         <div class="footer-bottom">
             <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
-            <p><a href="https://github.com/Semiiih/Les4Fantastiques" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
         </div>
     </footer>
-        <p><a href="https://github.com/Semiiih/Les4Fantastiques" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
-   
+
+    <script src="scripts.js"></script>
 </body>
 </html>

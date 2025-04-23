@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet - Jeu d'Aventure Textuelle</title>
+    <title>Projet - Jeu d'Aventure Textuelle - SAHIN Semih</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #3498db;
-            --secondary: #2980b9;
-            --accent: #f39c12;
-            --background: #f9f9f9;
-            --text: #2c3e50;
-            --light-gray: #ecf0f1;
-            --border: #e0e0e0;
-        }
-        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 30px;
-            background-color: var(--background);
+            background-color: #4a148c;
         }
         
-        header {
-            margin-bottom: 40px;
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .project-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 30px;
             text-align: center;
         }
         
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f39c12;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
         h1 {
-            color: var(--primary);
+            color: white;
             font-size: 2.2rem;
             margin-bottom: 10px;
             position: relative;
@@ -43,36 +53,43 @@
             position: absolute;
             width: 60%;
             height: 3px;
-            background-color: var(--accent);
+            background-color: #f39c12;
             bottom: -10px;
             left: 20%;
         }
         
-        h2 {
-            color: var(--secondary);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+        .subtitle {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            margin-bottom: 0;
         }
         
-        .container {
+        .content-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
+            padding: 30px;
         }
         
         @media (max-width: 768px) {
-            .container {
+            .content-container {
                 grid-template-columns: 1fr;
             }
         }
         
         .section {
-            background-color: white;
+            background-color: #f9f9f9;
             border-radius: 8px;
             padding: 25px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #2980b9;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
         }
         
         ul {
@@ -84,13 +101,14 @@
         }
         
         .code-sample {
-            background-color: var(--light-gray);
+            background-color: #f5f5f5;
             padding: 20px;
             border-radius: 8px;
             overflow-x: auto;
             font-family: 'Courier New', monospace;
             line-height: 1.4;
             box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
         }
         
         code {
@@ -106,75 +124,69 @@
         }
         
         .tech-tag {
-            background-color: var(--primary);
+            background-color: #3498db;
             color: white;
             padding: 6px 12px;
             border-radius: 4px;
             font-size: 14px;
             display: inline-block;
         }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            color: #7f8c8d;
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-        
-        .subtitle {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-            margin-bottom: 0;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">A.U.</div>
-        <h1>Jeu d'Aventure Textuelle</h1>
-        <p class="subtitle">Une expérience interactive en Python</p>
-    </header>
-    
     <div class="container">
-        <div class="section">
-            <h2>Description du projet</h2>
-            <p>Un jeu d'aventure textuelle se déroulant dans un lycée spécial nommé A.U. où les élèves possèdent des super-pouvoirs. Le joueur doit explorer différents lieux, interagir avec l'environnement et accomplir des missions pour progresser.</p>
-            
-            <h2>Technologies utilisées</h2>
-            <div class="tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">POO</span>
-                <span class="tech-tag">Structures de données</span>
-                <span class="tech-tag">Interface console</span>
-            </div>
+        <div class="header-info">
+            <h1>SAHIN Semih</h1>
+            <p>Développeur Fullstack</p>
         </div>
-        
-        <div class="section">
-            <h2>Fonctionnalités</h2>
-            <ul>
-                <li>Création de personnage avec choix de pouvoir</li>
-                <li>Navigation entre différents lieux de l'académie</li>
-                <li>Système de combat contre des mannequins d'entraînement</li>
-                <li>Gestion d'inventaire et des points de vie</li>
-                <li>Collection de badges pour progresser dans le jeu</li>
-                <li>Système d'alimentation pour récupérer des PV</li>
-            </ul>
-        </div>
+        <nav>
+            <a href="index.html" class="nav-item" data-active-color="orange">Accueil</a>
+            <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+            <a href="realisations.html" class="nav-item is-active" data-active-color="green">Réalisations</a>
+            <a href="veille.html" class="nav-item" data-active-color="red">Veille</a>
+            <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+            <span class="nav-indicator"></span>
+        </nav>
     </div>
     
-    <div class="section">
-        <h2>Extrait de code</h2>
-        <div class="code-sample">
-            <code>def lieu_hall():
+    <main>
+        <div class="project-container">
+            <div class="project-header">
+                <div class="logo">A.U.</div>
+                <h1>Jeu d'Aventure Textuelle</h1>
+                <p class="subtitle">Une expérience interactive en Python</p>
+            </div>
+            
+            <div class="content-container">
+                <div class="section">
+                    <h2>Description du projet</h2>
+                    <p>Un jeu d'aventure textuelle se déroulant dans un lycée spécial nommé A.U. où les élèves possèdent des super-pouvoirs. Le joueur doit explorer différents lieux, interagir avec l'environnement et accomplir des missions pour progresser.</p>
+                    
+                    <h2>Technologies utilisées</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">POO</span>
+                        <span class="tech-tag">Structures de données</span>
+                        <span class="tech-tag">Interface console</span>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>Fonctionnalités</h2>
+                    <ul>
+                        <li>Création de personnage avec choix de pouvoir</li>
+                        <li>Navigation entre différents lieux de l'académie</li>
+                        <li>Système de combat contre des mannequins d'entraînement</li>
+                        <li>Gestion d'inventaire et des points de vie</li>
+                        <li>Collection de badges pour progresser dans le jeu</li>
+                        <li>Système d'alimentation pour récupérer des PV</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="code-sample">
+                <h2 style="color: #333; margin: 0 0 15px 0;">Extrait de code</h2>
+                <code>def lieu_hall():
     print("\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*")
     print("Tu es dans le hall d'entrée de l'école.")
     print("On peut aller à de nombreux endroits d'ici.")
@@ -192,13 +204,46 @@
 
         elif reponse == "observer":
             print("Tu observes attentivement les environs.")</code>
+            </div>
         </div>
+    </main>
+
+    <!-- Section des logos des partenaires -->
+    <div class="logos-partners">
+        <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+            <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+        </a>
+        <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+            <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+        </a>
+        <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+            <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+        </a>
     </div>
-    
-    < <footer>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>SAHIN Semih</h3>
+                <p>Développeur Fullstack</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/semih-sahin-300145282" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/semih953/sahin_semih_python.git" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="veille.html">Veille</a>
+                <a href="bilan.html">Bilan</a>
+            </div>
+        </div>
         <div class="footer-bottom">
             <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
-            <p><a href="https://github.com/semih953/sahin_semih_python.git" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
         </div>
     </footer>
+
+    <script src="scripts.js"></script>
+</body>
 </html>

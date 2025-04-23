@@ -3,126 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Optimisation des exports - Projet 1</title>
-  <link rel="stylesheet" href="projet1.css">
+  <title>Optimisation des exports - SAHIN Semih</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* CSS minimal pour les diagrammes */
-    .diagram-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin: 30px 0;
+    body {
+      background-color: #4a148c;
     }
-
-    .diagram-image {
-      background-color: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+    
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
-
-    .diagram-image:hover {
-      transform: translateY(-5px);
-    }
-
-    .diagram-image img {
-      width: 100%;
-      height: auto;
-      border: 1px solid #eee;
-    }
-
-    .diagram-image h4 {
+    
+    .project-introduction {
       text-align: center;
-      margin-bottom: 15px;
-      color: #333;
-      font-size: 1.2rem;
+      margin-bottom: 40px;
     }
-
-    /* Style pour le diagramme de Gantt */
-    .gantt-image {
-      max-width: 100%;
-      overflow-x: auto;
-      margin: 30px 0;
-      padding: 15px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .gantt-image img {
-      width: 100%;
-      min-width: 800px; /* Pour assurer une bonne visibilité du diagramme de Gantt */
-      height: auto;
-      border: 1px solid #eee;
-    }
-
-    .gantt-image h4 {
-      text-align: center;
-      margin-bottom: 15px;
-      color: #333;
-      font-size: 1.2rem;
-    }
-
-    /* Modal pour affichage plein écran */
-    .fullscreen-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .fullscreen-modal.active {
-      display: flex;
-    }
-
-    .fullscreen-modal img {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-    }
-
-    .close-modal {
-      position: absolute;
-      top: 20px;
-      right: 30px;
+    
+    .project-introduction h1 {
+      font-size: 2.5rem;
       color: white;
-      font-size: 30px;
-      cursor: pointer;
+      margin-bottom: 20px;
     }
-
-    /* Adaptation pour mobile */
-    @media (max-width: 768px) {
-      .diagram-container {
-        grid-template-columns: 1fr;
-      }
-      
-      .gantt-image {
-        padding: 10px;
-      }
-      
-      .gantt-image img {
-        min-width: 600px;
-      }
+    
+    .project-introduction .project-image {
+      max-width: 40%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-details {
+      background-color: white;
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-details h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .project-details h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .project-details p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    
+    .project-details ul {
+      list-style-type: square;
+      margin-left: 20px;
+    }
+    
+    .project-details ul li {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-
-  <header>
+  <div class="container">
+    <div class="header-info">
+      <h1>SAHIN Semih</h1>
+      <p>Développeur Fullstack</p>
+    </div>
     <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-      </ul>
+      <a href="index.html" class="nav-item" data-active-color="orange">Accueil</a>
+      <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+      <a href="realisations.html" class="nav-item is-active" data-active-color="green">Réalisations</a>
+      <a href="veille.html" class="nav-item" data-active-color="red">Veille</a>
+      <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+      <span class="nav-indicator"></span>
     </nav>
-  </header>
+  </div>
 
   <main>
     <section class="project-introduction">
@@ -140,26 +103,6 @@
       <p>
         L'objectif principal de ce projet était de créer un système d'export efficace et facile à analyser, particulièrement pour les départements des ressources humaines.
       </p>
-
-      <!-- Diagrammes UML -->
-      <h3>Architecture du projet</h3>
-      <div class="diagram-container">
-        <div class="diagram-image">
-          <h4>Diagramme de cas d'utilisation</h4>
-          <img src="diagramme_cas_utilisation.png" alt="Diagramme de cas d'utilisation">
-        </div>
-        
-        <div class="diagram-image">
-          <h4>Diagramme de classes métier</h4>
-          <img src="diagramme_classes_metier(2).png" alt="Diagramme de classes métier">
-        </div>
-      </div>
-
-      <h3>Planning du projet</h3>
-      <div class="gantt-image">
-        <h4>Diagramme de Gantt</h4>
-        <img src="gantt.png" alt="Diagramme de Gantt du projet">
-      </div>
 
       <h3>Solutions proposées</h3>
       <p>
@@ -179,59 +122,42 @@
     </section>
   </main>
 
-  <!-- Modal pour l'affichage en plein écran -->
-  <div class="fullscreen-modal">
-    <span class="close-modal">&times;</span>
-    <img id="fullscreen-img" src="" alt="Image en plein écran">
+  <!-- Section des logos des partenaires -->
+  <div class="logos-partners">
+    <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+      <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+    </a>
+    <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+      <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+    </a>
+    <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+      <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+    </a>
   </div>
 
-  <script>
-    // JavaScript pour gérer l'affichage en plein écran des images
-    document.addEventListener('DOMContentLoaded', function() {
-        // Sélectionner toutes les images qui peuvent être agrandies
-        const zoomableImages = document.querySelectorAll('.diagram-image img, .gantt-image img');
-        const fullscreenModal = document.querySelector('.fullscreen-modal');
-        const fullscreenImg = document.getElementById('fullscreen-img');
-        const closeModalBtn = document.querySelector('.close-modal');
-        
-        // Ajouter un curseur pointer sur les images pour indiquer qu'elles sont cliquables
-        zoomableImages.forEach(img => {
-            img.style.cursor = 'pointer';
-            
-            // Ajouter un événement de clic pour ouvrir le modal
-            img.addEventListener('click', function() {
-                fullscreenImg.src = this.src;
-                fullscreenModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Empêcher le défilement en arrière-plan
-            });
-        });
-        
-        // Fermer le modal en cliquant sur le bouton de fermeture
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', function() {
-                fullscreenModal.classList.remove('active');
-                document.body.style.overflow = ''; // Réactiver le défilement
-            });
-        }
-        
-        // Fermer le modal en cliquant n'importe où
-        if (fullscreenModal) {
-            fullscreenModal.addEventListener('click', function(e) {
-                if (e.target === fullscreenModal) {
-                    fullscreenModal.classList.remove('active');
-                    document.body.style.overflow = ''; // Réactiver le défilement
-                }
-            });
-        }
-        
-        // Fermer le modal avec la touche Echap
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && fullscreenModal.classList.contains('active')) {
-                fullscreenModal.classList.remove('active');
-                document.body.style.overflow = ''; // Réactiver le défilement
-            }
-        });
-    });
-  </script>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>SAHIN Semih</h3>
+        <p>Développeur Fullstack</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/semih-sahin-300145282" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/semih953" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="entreprise.html">Entreprise</a>
+        <a href="veille.html">Veille</a>
+        <a href="bilan.html">Bilan</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>

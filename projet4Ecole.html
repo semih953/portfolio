@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste de Courses - Projet Python</title>
+    <title>Liste de Courses - Projet Python - SAHIN Semih</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Variables CSS */
         :root {
@@ -16,21 +18,16 @@
 
         /* Styles généraux */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
+            background-color: #4a148c;
         }
 
-        .container {
+        main {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 30px auto;
             padding: 20px;
         }
 
-        header {
+        .project-header {
             text-align: center;
             margin-bottom: 40px;
             padding: 30px 0;
@@ -45,7 +42,7 @@
             font-size: 2.5rem;
         }
 
-        header p {
+        .project-header p {
             margin-top: 10px;
             font-size: 1.2rem;
             opacity: 0.9;
@@ -115,15 +112,6 @@
             }
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
         /* Bouton démo */
         .demo-btn {
             display: inline-block;
@@ -144,10 +132,25 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="header-info">
+            <h1>SAHIN Semih</h1>
+            <p>Développeur Fullstack</p>
+        </div>
+        <nav>
+            <a href="index.html" class="nav-item" data-active-color="orange">Accueil</a>
+            <a href="entreprise.html" class="nav-item" data-active-color="blue">Entreprise</a>
+            <a href="realisations.html" class="nav-item is-active" data-active-color="green">Réalisations</a>
+            <a href="veille.html" class="nav-item" data-active-color="red">Veille</a>
+            <a href="bilan.html" class="nav-item" data-active-color="rebeccapurple">Bilan</a>
+            <span class="nav-indicator"></span>
+        </nav>
+    </div>
+    
+    <main>
+        <div class="project-header">
             <h1>Liste de Courses</h1>
             <p>Un gestionnaire de liste de courses simple en Python</p>
-        </header>
+        </div>
 
         <div class="section">
             <h2>À propos du projet</h2>
@@ -228,13 +231,44 @@ def afficher_liste_numerotee(liste):
                 <li>Calcul du prix total estimé</li>
             </ul>
         </div>
+    </main>
 
-        <footer>
-            <div class="footer-bottom">
-                <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
-                <p><a href="https://github.com/semih953/sahin_semih_python.git" class="footer-link"><i class="fab fa-github"></i> Voir sur GitHub</a></p>
-            </div>
-        </footer>
+    <!-- Section des logos des partenaires -->
+    <div class="logos-partners">
+        <a href="https://www.cnil.fr/" class="logo-link" target="_blank">
+            <img src="cnil.jpg" alt="Logo CNIL" class="logo-img">
+        </a>
+        <a href="https://www.ssi.gouv.fr/" class="logo-link" target="_blank">
+            <img src="anssi.jpg" alt="Logo ANSSI" class="logo-img">
+        </a>
+        <a href="https://www.defense.gouv.fr/dgse/direction-du-renseignement-et-de-la-securite-de-la-defense" class="logo-link" target="_blank">
+            <img src="drsd.jpg" alt="Logo DRSD" class="logo-img">
+        </a>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>SAHIN Semih</h3>
+                <p>Développeur Fullstack</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/semih-sahin-300145282" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/semih953/sahin_semih_python.git" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="entreprise.html">Entreprise</a>
+                <a href="veille.html">Veille</a>
+                <a href="bilan.html">Bilan</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SAHIN Semih - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
